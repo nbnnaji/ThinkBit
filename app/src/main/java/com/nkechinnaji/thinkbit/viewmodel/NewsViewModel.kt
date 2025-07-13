@@ -23,6 +23,7 @@ class NewsViewModel @Inject constructor(
             if(response != null && response.totalResults != 0){
                 everyNewsObserver.postValue(response.articles)
             }
+
         }
 
 //        runSuspendedFunction({
