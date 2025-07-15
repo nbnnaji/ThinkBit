@@ -19,7 +19,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -33,11 +32,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.model.Source
@@ -54,25 +51,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        viewModel.getEveryNews()
+
         viewModel.everyNewsObserver.observe(this){ news ->
             setContent {
                 ThinkBitTheme {
                     MyListScreen(news)
-//                    Scaffold(modifier = Modifier.fillMaxSize()) {
-//                        innerPadding -> {}
-//                        MyListScreen(news)
-//                    }
                 }
             }
         }
-//        setContent {
-//            ThinkBitTheme {
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                    MyListScreen(articleItems = sampleArticles)
-//                }
-//            }
-//        }
+        viewModel.getEveryNews()
+
     }
 }
 
@@ -140,11 +128,7 @@ fun NewsCardView(modifier: Modifier = Modifier, article: ArticleUiModel, onCLick
                     // set the shape automatically clip the image inside it
                     shape = CircleShape
                 ) {
-                    // the publisher image
-//                    AsyncImage(
-//                        model = article.publisher.favicon,
-//                        modifier = Modifier.size(16.dp),
-//                    )
+
                    var newsImage = rememberAsyncImagePainter(article.imageUrl)
                     Image(
                         painter = newsImage,
@@ -170,15 +154,13 @@ fun NewsCardView(modifier: Modifier = Modifier, article: ArticleUiModel, onCLick
                 maxLines = 1
             )
         }
-        // similar to the publisher image
-        // use surface to give a background color as loading placeholder
+
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 16.dp)
                 .height(164.dp),
-           // color = MaterialTheme.colorScheme.outline,
-            // set the shape automatically clip the image inside it
+
             shape = RoundedCornerShape(12.dp)
         ) {
             // the news image
@@ -187,7 +169,7 @@ fun NewsCardView(modifier: Modifier = Modifier, article: ArticleUiModel, onCLick
             var newsImage = rememberAsyncImagePainter(article.imageUrl)
             Image(
                 painter = newsImage,
-                contentDescription = article.title, // Provide meaningful content description
+                contentDescription = article.title,
                 modifier = Modifier
                     .size(10.dp)
                     .padding(end = 16.dp),
@@ -212,77 +194,6 @@ fun NewsCardView(modifier: Modifier = Modifier, article: ArticleUiModel, onCLick
     }
 }
 
-@Composable
-fun ListItemRow(item: ArticleUiModel) {
-    Card(
-        modifier = Modifier.padding(start= 8.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-    ) {
-        Row(
-            modifier = Modifier
-                .padding(4.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            // Image
-            val imagePainter = if (item.imageUrl != null) {
-                rememberAsyncImagePainter(item.imageUrl) // Using Coil library for network images
-            } else if (item.drawableResId != null) {
-                painterResource(id = item.drawableResId)
-            } else {
-                // Placeholder if no image is provided
-                painterResource(id = android.R.drawable.ic_menu_gallery) // Replace with your placeholder
-            }
-
-            Image(
-                painter = imagePainter,
-                contentDescription = item.title, // Provide meaningful content description
-                modifier = Modifier
-                    .size(80.dp)
-                    .padding(end = 16.dp),
-                contentScale = ContentScale.Crop
-            )
-
-            // Text
-
-                Text(
-                    text = item.title,
-                    style = MaterialTheme.typography.titleMedium
-                )
-
-
-
-                Text(
-                    text = item.source,
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(start = 8.dp)
-                )
-
-
-                Text(
-                    text = item.publication,
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(start = 8.dp)
-                )
-
-                Text(
-                    text = item.author,
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(start = 8.dp)
-                )
-
-        }
-    }
-}
-
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 // --- Preview with Sample Data ---
 @Preview(showBackground = true)
