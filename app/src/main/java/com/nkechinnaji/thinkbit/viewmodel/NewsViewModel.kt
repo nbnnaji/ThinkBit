@@ -2,8 +2,8 @@ package com.nkechinnaji.thinkbit.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nkechinnaji.thinkbit.base.viewmodel.BaseViewModel
 import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.service.NewsService
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,13 +13,13 @@ import javax.inject.Inject
 @HiltViewModel
 class NewsViewModel @Inject constructor(
     private val service: NewsService
-) : BaseViewModel() {
+) : ViewModel() {
 
-     var everyNewsObserver = MutableLiveData<ArrayList<Articles>>()
-     var emptyStateObserver = MutableLiveData<Boolean>()
+    var everyNewsObserver = MutableLiveData<ArrayList<Articles>>()
+    var emptyStateObserver = MutableLiveData<Boolean>()
     var errorObserver = MutableLiveData<String?>()
 
-    fun getEveryNews(){
+    fun getEveryNews() {
         viewModelScope.launch {
             try {
                 // Clear any previous error before making a new call

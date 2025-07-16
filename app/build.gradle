@@ -60,12 +60,14 @@ android {
             applicationId "com.nkechinnaji.thinkbit"
             manifestPlaceholders = [appName: "ThinkBit"]
             buildConfigField "String", "NEWS_URL", '"https://newsapi.org/v2/"'
+            buildConfigField "String", "KEY_URL", '"84a14bd367b6466894466ebcb9da7612"'
         }
 
         prod {
             applicationId "com.nkechinnaji.thinkbit"
             manifestPlaceholders = [appName: "ThinkBit"]
             buildConfigField "String", "NEWS_URL", '"https://newsapi.org/v2/"'
+            buildConfigField "String", "KEY_URL", '"84a14bd367b6466894466ebcb9da7612"'
         }
 
     }

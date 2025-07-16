@@ -1,8 +1,7 @@
 package com.nkechinnaji.thinkbit.di.module
 
 import com.nkechinnaji.thinkbit.BuildConfig
-import com.nkechinnaji.thinkbit.baseservice.NewsServiceInterface
-import com.nkechinnaji.thinkbit.baseservice.WeatherServiceInterface
+import com.nkechinnaji.thinkbit.baseservice.ApiNewsInterface
 import com.nkechinnaji.thinkbit.news.repository.NewsRepository
 import com.nkechinnaji.thinkbit.news.repository.NewsRepositoryImpl
 import com.nkechinnaji.thinkbit.news.service.NewsService
@@ -51,22 +50,16 @@ object ApplicationModule {
 
     @Singleton
     @Provides
-    fun getNewsApiService(@RetrofitOne retrofit: Retrofit): NewsServiceInterface {
+    fun getNewsApiService(@RetrofitOne retrofit: Retrofit): ApiNewsInterface {
         return retrofit
-            .create(NewsServiceInterface::class.java)
+            .create(ApiNewsInterface::class.java)
     }
 
-    @Singleton
-    @Provides
-    fun getWeatherApiService(@RetrofitTwo retrofit: Retrofit): WeatherServiceInterface {
-        return retrofit
-            .create(WeatherServiceInterface::class.java)
-    }
 
     @Singleton
     @Provides
     fun buildRepo(
-        apiService: NewsServiceInterface
+        apiService: ApiNewsInterface
     ): NewsRepository {
         return NewsRepositoryImpl(apiService)
     }
@@ -79,21 +72,4 @@ object ApplicationModule {
         return NewsServiceImpl(newsRepository)
     }
 
-//    @Singleton
-//    @Provides
-//    fun getNewsEndpointInterface(retrofit: Retrofit): NewsServiceInterface {
-//        return retrofit
-//            .create(NewsServiceInterface::class.java)
-//    }
-
-    // service with different base url
-//    @Singleton
-//    @Provides
-//    fun getNewsEndpointInterface(retrofit: Retrofit): NewsServiceInterface {
-//        return Retrofit.Builder()
-//            .baseUrl(BuildConfig.NEWS_URL_2)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//            .create(NewsServiceInterface::class.java)
-//    }
 }
