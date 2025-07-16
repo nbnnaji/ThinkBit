@@ -15,6 +15,7 @@ composeBom = "2024.09.00"
 dagger = "2.43.2"
 coil = "3.0.4"
 ktor ="3.0.1"
+coreI18n = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,7 @@ dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
 daggerAndroidSupport = { module = "com.google.dagger:dagger-android-support", version.ref = "dagger" }
 daggerAndroidProcessor = { module = "com.google.dagger:dagger-android-processor", version.ref = "dagger" }
+androidx-core-i18n = { group = "androidx.core", name = "core-i18n", version.ref = "coreI18n" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
