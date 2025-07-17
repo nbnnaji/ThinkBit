@@ -29,7 +29,7 @@ fun Articles.toUiModel(): ArticleUiModel{
     )
 }
 
-//Extention function for list of articles
+//Extension function for list of articles
 fun ArrayList<Articles>.toUiModel(): List<ArticleUiModel>{
     return this.map{
         article ->

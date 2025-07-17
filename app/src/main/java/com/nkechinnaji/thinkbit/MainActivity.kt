@@ -7,8 +7,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,24 +18,30 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SearchBar
+import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -42,8 +50,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -54,6 +63,9 @@ import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.model.Source
 import com.nkechinnaji.thinkbit.news.model.uimodel.ArticleUiModel
 import com.nkechinnaji.thinkbit.news.model.uimodel.toUiModel
+import com.nkechinnaji.thinkbit.ui.theme.Pink10
+import com.nkechinnaji.thinkbit.ui.theme.Pink80
+import com.nkechinnaji.thinkbit.ui.theme.Purple80
 import com.nkechinnaji.thinkbit.ui.theme.ThinkBitTheme
 import com.nkechinnaji.thinkbit.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -66,6 +78,7 @@ class MainActivity : ComponentActivity() {
 
     private val viewModel: NewsViewModel by viewModels()
 
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -74,7 +87,13 @@ class MainActivity : ComponentActivity() {
         viewModel.everyNewsObserver.observe(this) { news ->
             setContent {
                 ThinkBitTheme {
-                    getNewsList(news)
+                    Surface(
+                        color = MaterialTheme.colorScheme.surface,
+                        modifier = Modifier
+                        .fillMaxSize()
+                        .windowInsetsPadding(TopAppBarDefaults.windowInsets)) {
+                        getNewsList(news)
+                    }
 
                 }
             }
@@ -83,12 +102,13 @@ class MainActivity : ComponentActivity() {
     }
 
 
-//With Search & Load More
+    //With Search & Load More
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun getNewsList(articleItems: ArrayList<Articles>) {
         var searchQuery by remember { mutableStateOf("") }
         var active by remember { mutableStateOf(false) }
+        var isExpandedSearch by remember { mutableStateOf(false) }
 
         // State for "Show More" functionality for the main list
         var visibleMainItemCount by remember { mutableIntStateOf(5) }
@@ -99,51 +119,51 @@ class MainActivity : ComponentActivity() {
         }
 
         // This list is used for the search suggestions when the search bar is active
-        val filteredArticlesForSearchSuggestions = remember(searchQuery, active, allArticleUiModels) {
-            if (searchQuery.isBlank()) {
-                if (active) { // Show nothing or recent searches if search is active and query blank
-                    emptyList()
-                } else { // Should not happen if active is false and query blank (covered by main list)
-                    allArticleUiModels
-                }
-            } else {
-                allArticleUiModels.filter { article ->
-                    val query = searchQuery.trim()
-                    (article.title?.contains(query, ignoreCase = true) == true) ||
-                            (article.desc?.contains(query, ignoreCase = true) == true) ||
-                            (article.author?.contains(query, ignoreCase = true) == true)
+        val filteredArticlesForSearchSuggestions =
+            remember(searchQuery, active, allArticleUiModels) {
+                if (searchQuery.isBlank()) {
+                    if (active) { // Show nothing or recent searches if search is active and query blank
+                        emptyList()
+                    } else { // Should not happen if active is false and query blank (covered by main list)
+                        allArticleUiModels
+                    }
+                } else {
+                    allArticleUiModels.filter { article ->
+                        val query = searchQuery.trim()
+                        (article.title.contains(query, ignoreCase = true) == true) ||
+                                (article.desc.contains(query, ignoreCase = true) == true) ||
+                                (article.author.contains(query, ignoreCase = true) == true)
+                    }
                 }
             }
-        }
 
         // This is the list for the main screen content (outside search bar's active state)
         // It will now also respect the visibleMainItemCount
-        val mainScreenDisplayList = remember(searchQuery, active, allArticleUiModels, visibleMainItemCount) {
-            val baseList = if (!active) { // Only apply "show more" when search is NOT active
-                if (searchQuery.isBlank()) {
-                    allArticleUiModels
-                } else {
-                    // If search is not active but query is present (e.g. after a search),
-                    // show filtered results without "show more" for simplicity,
-                    // or decide if "show more" should apply here too.
-                    // For now, showing all filtered results.
-                    allArticleUiModels.filter { article -> // Re-filter based on searchQuery
-                        val query = searchQuery.trim()
-                        (article.title?.contains(query, ignoreCase = true) == true) ||
-                                (article.desc?.contains(query, ignoreCase = true) == true) ||
-                                (article.author?.contains(query, ignoreCase = true) == true)
+        val mainScreenDisplayList =
+            remember(searchQuery, active, allArticleUiModels, visibleMainItemCount) {
+                val baseList = if (!active) { // Only apply "show more" when search is NOT active
+                    if (searchQuery.isBlank()) {
+                        allArticleUiModels
+                    } else {
+                        // If search is not active but query is present (e.g. after a search),
+                        // show filtered results without "show more" for simplicity,
+                        // or decide if "show more" should apply here too.
+                        // For now, showing all filtered results.
+                        allArticleUiModels.filter { article -> // Re-filter based on searchQuery
+                            val query = searchQuery.trim()
+                            (article.title.contains(query, ignoreCase = true) == true)
+                        }
                     }
+                } else { // Search is active, main list area is typically empty or shows different content
+                    emptyList()
                 }
-            } else { // Search is active, main list area is typically empty or shows different content
-                emptyList()
-            }
 
-            if (!active && searchQuery.isBlank()) { // Apply "take" only for the initial, unfiltered list
-                baseList.take(visibleMainItemCount)
-            } else {
-                baseList // For search results or when search is active, show all derived items
+                if (!active && searchQuery.isBlank()) { // Apply "take" only for the initial, unfiltered list
+                    baseList.take(visibleMainItemCount)
+                } else {
+                    baseList // For search results or when search is active, show all derived items
+                }
             }
-        }
 
 
         Scaffold(
@@ -155,56 +175,88 @@ class MainActivity : ComponentActivity() {
                         style = MaterialTheme.typography.headlineSmall,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(start = 16.dp, top = 55.dp, end = 16.dp),
-                        textAlign = TextAlign.Center
+                            /*.padding(start = 16.dp, top = 55.dp, end = 16.dp)*/,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
 
+                    val onActiveChange: (Boolean) -> Unit = { isActive ->
+                        active = isActive
+                        if (!isActive && searchQuery.isBlank()) {
+                            // If search becomes inactive and query is blank, ensure main list pagination is fresh
+                            // visibleMainItemCount = 5 // Or maintain current state if preferred
+                            Log.d("SearchState", "Search dismissed. Showing main list.")
+                        }
+                    }
+                    val colors1 = SearchBarDefaults.colors()// Dismiss search bar on item click
+                    // Populate search with title
+// Show all suggestions
+                     //Content for when SearchBar is active (showing suggestions)
                     SearchBar(
-                        query = searchQuery,
-                        onQueryChange = {
-                            searchQuery = it
-                            // Potentially reset visibleMainItemCount if search interaction should affect main list pagination
-                            // if (active && it.isBlank()) {
-                            // visibleMainItemCount = 5
-                            // }
+                        colors = SearchBarDefaults.colors(
+                            containerColor = Pink10,
+                        ),
+                        inputField = {
+                            SearchBarDefaults.InputField(
+                                expanded = isExpandedSearch,
+                                query = searchQuery,
+                                onQueryChange = {
+                                    searchQuery = it
+                                    // Potentially reset visibleMainItemCount if search interaction should affect main list pagination
+                                    // if (active && it.isBlank()) {
+                                    // visibleMainItemCount = 5
+                                    // }
+                                },
+                                onSearch = {
+                                    active = false
+                                    // When a search is executed, we typically show all results from that search.
+                                    // The "show more" on the main list might not be relevant here.
+                                },
+                                onExpandedChange = onActiveChange,
+                                placeholder = { Text("Search articles...") },
+                                leadingIcon = {
+                                    if (searchQuery.isNotEmpty()) {
+                                        IconButton(
+                                            onClick = {
+                                                active = false
+                                                searchQuery = ""
+                                            }
+                                        ) {
+                                            Icon(Icons.AutoMirrored.Default.ArrowBack, contentDescription = "Back")
+                                        }
+                                    } else {
+                                        Icon(Icons.Default.Search, contentDescription = null)
+                                    }
+                                },
+                                trailingIcon = {
+                                    if (searchQuery.isNotEmpty()) {
+                                        Icon(
+                                            modifier = Modifier.clickable {
+                                                searchQuery = ""
+                                                // active = false // Optionally deactivate search on clear
+                                                // visibleMainItemCount = 5 // Reset main list if clearing search returns to it
+                                            },
+                                            imageVector = Icons.Filled.Close,
+                                            contentDescription = "Clear search"
+                                        )
+                                    }
+                                },
+                                colors = colors1.inputFieldColors,
+                            )
                         },
-                        onSearch = {
-                            active = false
-                            // When a search is executed, we typically show all results from that search.
-                            // The "show more" on the main list might not be relevant here.
-                        },
-                        active = active,
-                        onActiveChange = { isActive ->
-                            active = isActive
-                            if (!isActive && searchQuery.isBlank()) {
-                                // If search becomes inactive and query is blank, ensure main list pagination is fresh
-                                // visibleMainItemCount = 5 // Or maintain current state if preferred
-                                Log.d("SearchState", "Search dismissed. Showing main list.")
-                            }
-                        },
-                        placeholder = { Text("Search articles...") },
-                        leadingIcon = { Icon(Icons.Filled.Search, "Search Icon") },
-                        trailingIcon = {
-                            if (searchQuery.isNotEmpty()) {
-                                Icon(
-                                    modifier = Modifier.clickable {
-                                        searchQuery = ""
-                                        // active = false // Optionally deactivate search on clear
-                                        // visibleMainItemCount = 5 // Reset main list if clearing search returns to it
-                                    },
-                                    imageVector = Icons.Filled.Close,
-                                    contentDescription = "Clear search"
-                                )
-                            }
-                        },
+                        expanded = active,
+                        onExpandedChange = onActiveChange,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp)
-                            .padding(bottom = 32.dp)
+                            .padding(bottom = 16.dp)
                     ) {
                         // Content for when SearchBar is active (showing suggestions)
                         if (searchQuery.isBlank() && filteredArticlesForSearchSuggestions.isEmpty() && active) {
-                            Text("Type to search for news articles", modifier = Modifier.padding(16.dp))
+                            Text(
+                                "Type to search for news articles",
+                                modifier = Modifier.padding(16.dp)
+                            )
                         } else {
                             LazyColumn(
                                 modifier = Modifier.fillMaxSize(),
@@ -229,7 +281,8 @@ class MainActivity : ComponentActivity() {
                                             article = model
                                         ) {
                                             active = false // Dismiss search bar on item click
-                                            searchQuery = model.title ?: "" // Populate search with title
+                                            searchQuery =
+                                                model.title ?: "" // Populate search with title
                                         }
                                     }
                                 }
@@ -237,10 +290,32 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
-            }
-        ) { innerPadding ->
+            }, content = CardListComposable(
+                mainScreenDisplayList,
+                active,
+                searchQuery,
+                visibleMainItemCount,
+                allArticleUiModels
+            )
+        )
+    }
+
+    @Composable
+    private fun CardListComposable(
+        mainScreenDisplayList: List<ArticleUiModel>,
+        active: Boolean,
+        searchQuery: String,
+        visibleMainItemCount: Int,
+        allArticleUiModels: List<ArticleUiModel>
+    ): @Composable (PaddingValues) -> Unit {
+        var visibleMainItemCount1 = visibleMainItemCount
+        return { innerPadding ->
             // Main content area (visible when search is not active, or after search)
-            Column(modifier = Modifier.padding(innerPadding).fillMaxSize()) {
+            Column(
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .fillMaxSize()
+            ) {
                 LazyColumn(
                     modifier = Modifier.weight(1f), // Allow LazyColumn to take available space
                     contentPadding = PaddingValues(16.dp)
@@ -260,21 +335,22 @@ class MainActivity : ComponentActivity() {
                 }
 
                 // "Show More" button for the main list, only if search is not active and query is blank
-                if (!active && searchQuery.isBlank() && visibleMainItemCount < allArticleUiModels.size) {
+                if (!active && searchQuery.isBlank() && visibleMainItemCount1 < allArticleUiModels.size) {
                     Button(
                         onClick = {
-                            visibleMainItemCount += 5
-                            if (visibleMainItemCount > allArticleUiModels.size) {
-                                visibleMainItemCount = allArticleUiModels.size
+                            visibleMainItemCount1 += 5
+                            if (visibleMainItemCount1 > allArticleUiModels.size) {
+                                visibleMainItemCount1 = allArticleUiModels.size
                             }
                         },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFB23A48)), // Teal color,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(16.dp)
+                            .padding(16.dp, 0.dp, 16.dp, 16.dp)
                     ) {
-                        Text("Show More (${allArticleUiModels.size - visibleMainItemCount} remaining)")
+                        Text("Show More (${allArticleUiModels.size - visibleMainItemCount1} remaining)")
                     }
-                } else if (!active && searchQuery.isBlank() && allArticleUiModels.isNotEmpty() && visibleMainItemCount >= allArticleUiModels.size) {
+                } else if (!active && searchQuery.isBlank() && allArticleUiModels.isNotEmpty() && visibleMainItemCount1 >= allArticleUiModels.size) {
                     Text(
                         "All articles loaded.",
                         modifier = Modifier
@@ -292,7 +368,10 @@ class MainActivity : ComponentActivity() {
         Card(
             modifier = modifier
                 .clickable(onClick = onCLick)
-                .padding(bottom = 16.dp)
+                .padding(bottom = 16.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Pink10
+       )
         ) {
             Row(
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
@@ -306,9 +385,9 @@ class MainActivity : ComponentActivity() {
                     // use surface to give a background color
                     // as loading placeholder
                     Surface(
-                        color = MaterialTheme.colorScheme.secondary,
+                        color = Color(0xFFB23A48),
                         // set the shape automatically clip the image inside it
-                        shape =  CircleShape
+                        shape = StarShape(numPoints = 5, innerRadiusRatio = 0.5f)
                     ) {
 
                         var newsImage = rememberAsyncImagePainter(article.imageUrl)
@@ -324,9 +403,12 @@ class MainActivity : ComponentActivity() {
                     }
                     // the publisher name
                     Text(
-                        text = if (article.author.isBlank()) "" else {"  Author: ${article.author}"},
+                        text = if (article.author.isBlank()) "" else {
+                            "  Author: ${article.author}"
+                        },
                         style = MaterialTheme.typography.labelSmall,
-                        maxLines = 1
+                        maxLines = 1,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
                 // the news date
@@ -360,14 +442,14 @@ class MainActivity : ComponentActivity() {
             }
             // news title
             Text(
-                text = article.title ?: "",
+                text = article.title,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp)
             )
             // news short description
             Text(
-                text = article.desc ?: "",
+                text = article.desc,
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp)
             )

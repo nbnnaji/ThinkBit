@@ -1,0 +1,1306 @@
+{
+  "status": "ok",
+  "totalResults": 16269,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "Xkcd.com"
+      },
+      "author": "About",
+      "title": "Weather Balloons",
+      "description": null,
+      "url": "https://xkcd.com/3107/",
+      "urlToImage": "https://imgs.xkcd.com/comics/weather_balloons_2x.png",
+      "publishedAt": "2025-06-25T04:00:00Z",
+      "content": "This work is licensed under a\r\nCreative Commons Attribution-NonCommercial 2.5 License.\r\nThis means you're free to copy and share these comics (but not to sell them). More details."
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Danielle Wilhour, The Conversation",
+      "title": "Why the Weather Is Literally Giving You a Headache",
+      "description": "Shifts in the weather are known to trigger migraines. Here's what you can do to ease the pain.",
+      "url": "https://gizmodo.com/why-the-weather-is-literally-giving-you-a-headache-2000627507",
+      "urlToImage": "https://gizmodo.com/app/uploads/2022/04/a8162a0a0572d92030931431ad19d17a.jpg",
+      "publishedAt": "2025-07-13T14:00:20Z",
+      "content": "If you are one of the 39 million Americans in the U.S. living with migraines, theres a good chance an intense headache will begin when the weather shifts.\r\nYou arent alone. Studies find 30% to 50% of… [+5263 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Observatory marks 230 years of recording weather",
+      "description": "The building holds the longest sequence of continuous weather data anywhere in the UK and Ireland.",
+      "url": "https://www.bbc.com/news/articles/c5yg4369pv0o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/2330/live/f3d2a650-5e3d-11f0-960d-e9f1088a89fe.jpg",
+      "publishedAt": "2025-07-13T23:56:04Z",
+      "content": "Geoff MaskellBBC News NI weather presenter\r\nArmagh Observatory holds weather records dating back to 1795\r\nArmagh Observatory is marking a very special meteorological milestone as the institute celebr… [+5244 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Extreme weather is the UK's new normal, says Met Office",
+      "description": "The UK has a notably different climate compared with just a few decades ago, the Met Office says.",
+      "url": "https://www.bbc.com/news/articles/c74w1gyd7mko",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/6cda/live/b7f26680-5e4b-11f0-b5c5-012c5796682d.jpg",
+      "publishedAt": "2025-07-13T23:09:00Z",
+      "content": "Many parts of the UK are in the throes of their third heatwave\r\nThe UK is breaking heat and rainfall records increasingly frequently as its climate continues to warm, the Met Office has warned.\r\nThe … [+7916 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Heatwave eases as wind and rain drift across UK",
+      "description": "After the recent heat, Sunday feels very different - and there is unsettled weather ahead.",
+      "url": "https://www.bbc.com/news/articles/crrqw7z0ykko",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/47cc/live/782fb340-4f2d-11f0-a34b-95b0eb54cb51.jpg",
+      "publishedAt": "2025-06-22T13:25:12Z",
+      "content": "Darren Bett\r\nStorm clouds gathered above Whitley Bay in North Tyneside on Saturday evening following high temperatures across the UK in recent days\r\nWind and rain are drifting across the UK, bringing… [+2733 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Ellyn Lapointe",
+      "title": "‘Warning Fatigue’ Might Have Made Texas Floods Deadlier",
+      "description": "The National Weather Service issued multiple alerts ahead of the deadly floods that devastated central Texas, but whether people actually responded to them is an important question.",
+      "url": "https://gizmodo.com/warning-fatigue-might-have-made-texas-floods-deadlier-2000625092",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/Guadalupe-river-flash-flood-1200x675.jpg",
+      "publishedAt": "2025-07-07T17:30:49Z",
+      "content": "A deluge of rain triggered deadly flash floods in Texas Hill Country over the weekend, causing widespread damage and killing more than 80 people. As the death toll climbs, some experts say flood warn… [+5480 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": "Elizabeth Rizzini",
+      "title": "Will the warm weather last for Glastonbury Festival?",
+      "description": "Will the sunny, hot weather last for long enough for the start of the world-famous festival?",
+      "url": "https://www.bbc.com/weather/articles/cp8y886mr50o",
+      "urlToImage": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/debe/live/b0c3b400-4a9a-11f0-85bc-9740449fbc95.jpg",
+      "publishedAt": "2025-06-16T17:05:58Z",
+      "content": "By the end of this week temperatures will rise to well above the June average, forecast to hit 28C in nearby Pilton, Somerset. It will feel warm at night too with temperatures not dropping below the … [+766 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": "Sarah Keith-Lucas",
+      "title": "As UK faces third heatwave, is this weather 'just summer'?",
+      "description": "2025 is already shaping up to be an extraordinary year for weather records in parts of the UK.",
+      "url": "https://www.bbc.com/weather/articles/cwyrw66jkkko",
+      "urlToImage": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/cc05/live/fe790540-5cb7-11f0-ae37-a7df7603ca40.jpg",
+      "publishedAt": "2025-07-10T23:06:13Z",
+      "content": "Whilst the current heatwave is expected to persist into the start of next week, there are signs of slightly cooler and more unsettled conditions on Monday and Tuesday, particularly in the north\r\nHowe… [+1017 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": "Ben Rich",
+      "title": "Another heatwave is on the way for the UK and it could be the longest yet",
+      "description": "Hot weather is forecast to return this week but to which locations and for how long?",
+      "url": "https://www.bbc.com/weather/articles/cx2jdg56gedo",
+      "urlToImage": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/7465/live/c3c16d40-5b20-11f0-9b28-9bfb5df7c94a.jpg",
+      "publishedAt": "2025-07-08T06:10:43Z",
+      "content": "This will be the UK's third heatwave of the summer so far and it could be much more extensive.\r\nThe first lifted temperatures at Charlwood, Surrey, to 33.2C (91.8F) on 21 June. \r\nJust over a week lat… [+311 chars]"
+    },
+    {
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Umair Irfan",
+      "title": "The World Is Producing More Food than Ever—but Not for Long",
+      "description": "Even America’s richest farmlands can’t outrun climate collapse. That’s everyone’s problem.",
+      "url": "https://www.wired.com/story/the-world-is-producing-more-food-than-ever-before-but-not-for-long/",
+      "urlToImage": "",
+      "publishedAt": "2025-06-28T11:00:00Z",
+      "content": "This story originally appeared on Vox and is part of the Climate Desk collaboration.\r\nGlobally, humanity is producing more food than ever, but that harvest is concentrated in just a handful of breadb… [+3231 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Moment house is swept away in New Mexico flash flooding",
+      "description": "Video shows a home being swept down a flooded river in Ruidoso, where waters have risen 15 feet, according to weather officials.",
+      "url": "https://www.bbc.com/news/videos/cren2zq1y3qo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/53ea/live/cd64a280-5c57-11f0-960d-e9f1088a89fe.jpg",
+      "publishedAt": "2025-07-09T00:11:42Z",
+      "content": "The National Weather Service (NWS) has declared a flash flood emergency in Ruidoso, New Mexico, on Tuesday, 8 July, urging residents to seek higher ground immediately. Video shows a home being swept … [+128 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Brandon Russell",
+      "title": "Eufy’s X10 Pro Omni mopping robovac has returned to its best price to date",
+      "description": "Now that warmer weather is here, spring cleaning duties are likely falling by the wayside. But the good news is you can enjoy the outdoors and clean your home with zero effort by letting a robot vacuum do the hard work for you. For that, we recommend a versat…",
+      "url": "https://www.theverge.com/tech/689275/eufy-x10-pro-omni-mopping-robot-vacuum-deal-sale",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/eufy-10-pro-omni-deal.png?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-06-19T16:17:37Z",
+      "content": "This editor-favorite model offers excellent mopping and AI-powered obstacle detection.\r\nThis editor-favorite model offers excellent mopping and AI-powered obstacle detection.\r\nNow that warmer weather… [+1701 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Hot weather continues in parts of England but temperatures cool elsewhere",
+      "description": "More hot weather is forecast for parts of England but elsewhere in the UK it will be a cooler and cloudier day.",
+      "url": "https://www.bbc.com/news/articles/c79qqx1r5yyo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/32fd/live/30fc4030-5647-11f0-91ce-75a7c213ee0c.jpg",
+      "publishedAt": "2025-07-01T07:15:13Z",
+      "content": "Hot weather will continue across the south-east of England on Tuesday with temperatures rising above 30C once again.\r\nThere is a chance the highest temperature of the year so far could be reached wit… [+2376 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Amber heat health alerts issued as temperatures to soar",
+      "description": "The alerts warn of increased pressure on health and social care services as temperatures climb.",
+      "url": "https://www.bbc.com/news/articles/c79q8y84exdo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/8e72/live/59bbf6e0-5274-11f0-9773-2789fa4a3c16.jpg",
+      "publishedAt": "2025-06-26T10:10:24Z",
+      "content": "Amber heat health alerts have been issued for parts of England as temperatures are set to climb to more than 30C.\r\nThey will be in force from 12:00 BST on Friday until 18:00 BST on Tuesday, with the … [+803 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Rebecca Hersher",
+      "title": "Defense Department will stop providing crucial satellite weather data",
+      "description": "Hurricane forecasters rely on weather data collected and processed by Department of Defense satellites. That data will no longer be available as of Monday, June 30.",
+      "url": "https://www.npr.org/2025/06/28/nx-s1-5446120/defense-department-cuts-hurricane-ice-weather-satellite",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5078x2856+0+264/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb1%2Fdc%2Fdca979f74cfab1ed64da365d2b07%2Fap25170566372451.jpg",
+      "publishedAt": "2025-06-28T11:00:00Z",
+      "content": "The U.S. Department of Defense will no longer provide satellite weather data, leaving hurricane forecasters without crucial information about storms as peak hurricane season looms in the Atlantic.\r\nF… [+6346 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Justine Calma",
+      "title": "Why it’s so hard to warn people about flash floods",
+      "description": "By definition, flash floods are notoriously difficult to warn people about well in advance. They form rapidly, giving forecasters hours of lead time at best to figure out where they might hit with specificity. We've seen this with devastating effect in Texas,…",
+      "url": "https://www.theverge.com/climate-change/701077/flash-flood-forecast-texas-disaster",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/gettyimages-2222957082.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-07-08T19:06:46Z",
+      "content": "People usually only have hours of notice in advance. The disaster in Texas was a worst-case scenario.\r\nBy definition, flash floods are notoriously difficult to warn people about well in advance. They… [+7074 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Ash Parrish",
+      "title": "Nintendo revealed the Super Mario Odyssey team made Donkey Kong Bananza",
+      "description": "As previews for Donkey Kong Bananza come in ahead of the game’s July 17th release date, one tidbit has stood out on the development of this game. It’s been several years since Super Mario Odyssey and now we know what that team has been up to, as Nintendo has …",
+      "url": "https://www.theverge.com/news/695726/donkey-kong-bananza-developers-super-mario-odyssey",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/04/videoframe_109465.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
+      "publishedAt": "2025-07-01T15:13:31Z",
+      "content": "The next 3D Mario platformer might already be here.\r\nAs previews for Donkey Kong Bananza come in ahead of the games July 17th release date, one tidbit has stood out on the development of this game. I… [+1170 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Justine Calma",
+      "title": "Conspiracy theorists are blaming flash floods on cloud seeding — it has to stop",
+      "description": "As The Verge's resident disaster writer, I'm tired of this nonsense. So let's just get into it. What is cloud seeding? Cloud seeding is basically an attempt to make precipitation fall from clouds. It targets clouds that have water droplets that are essentiall…",
+      "url": "https://www.theverge.com/science/704711/cloud-seeding-flash-flood-conspiracy-theory",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/STK479_CONSPIRACY_THEORIES_C.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-07-11T00:04:12Z",
+      "content": "Cloud seeding cant even make a cloud, and yet the blame game has devolved into death threats.\r\nAs The Verges resident disaster writer, Im tired of this nonsense. So lets just get into it. \r\nWhat is c… [+5610 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "ssaril@insider.com (Sarah Saril)",
+      "title": "Prime Day deals to beat the heat: 23 cooling products our editors love",
+      "description": "We've tested a lot of products that can help alleviate hot weather, many of which are on sale now for Amazon Prime Day.",
+      "url": "https://www.businessinsider.com/guides/deals/prime-day-cooling-product-deals-2025-7",
+      "urlToImage": "https://i.insider.com/686f019c85e81483682db741?width=1200&format=jpeg",
+      "publishedAt": "2025-07-10T00:56:15Z",
+      "content": "As someone who easily succumbs to the summer heat, I've done my research into the best ways to chill out. My fellow editors on the Reviews team have too, rounding up the best air conditioners, coolin… [+6602 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": "Chris Fawkes",
+      "title": "Temperatures above 30C forecast as a second June heatwave looms for the UK",
+      "description": "Another heatwave could be on the way this week as temperatures are set to soar.",
+      "url": "https://www.bbc.com/weather/articles/cx2g8vw8v0jo",
+      "urlToImage": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/defb/live/8f19adb0-51c4-11f0-b4be-8f7caf53b80c.jpg",
+      "publishedAt": "2025-06-25T16:35:38Z",
+      "content": "Rain and showers are forecast for Thursday with a fresh feel to the weather. \r\nHumidity increases on Friday as a warm airmass associated with the recent extreme heatwave in the USA makes it's way acr… [+982 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Men's Journal"
+      },
+      "author": "Kameron Duncan",
+      "title": "100 MPH Winds Could Hit Two U.S. States on June 17",
+      "description": "The summer months bring warm weather, the opportunity to travel and more. They can also bring in intense weather, and one region of the United States could...",
+      "url": "https://www.mensjournal.com/news/100-mph-winds-could-hit-two-u-s-states-on-june-17",
+      "urlToImage": "https://media.zenfs.com/en/men_s_journal_718/46897556460ef3d14b7982f4ce0b8369",
+      "publishedAt": "2025-06-17T17:29:07Z",
+      "content": "The summer months bring warm weather, the opportunity to travel and more. They can also bring in intense weather, and one region of the United States could be dealing with massive winds on Tuesday.\r\n… [+2160 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Health alerts come into force ahead of second heatwave",
+      "description": "The UK could see its hottest day of the year on Monday, as a likely heatwave coincides with Glastonbury and Wimbledon.",
+      "url": "https://www.bbc.com/news/articles/cy4y8exrw0zo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/5afd/live/00577f10-533d-11f0-b4be-8f7caf53b80c.jpg",
+      "publishedAt": "2025-06-27T11:32:51Z",
+      "content": "Simon King\r\nThose attending Glastonbury Festival have a warm weekend in store\r\nHeat health alerts have come into force across most of England as the country braces for a second summer heatwave.\r\nAn a… [+4271 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Ellyn Lapointe",
+      "title": "150 Million Americans Under Life-Threatening Heat Dome This Week",
+      "description": "This could be the start of a blazing hot summer in the U.S.",
+      "url": "https://gizmodo.com/150-million-americans-under-life-threatening-heat-dome-this-week-2000619204",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/shutterstock_2498858579-1200x675.jpg",
+      "publishedAt": "2025-06-23T21:15:52Z",
+      "content": "More than 150 million Americans from Texas to Maine are under extreme heat advisories as dangerously high temperatures bake the nation. Meteorologists warn that this heat dome could expand to affect … [+4985 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Gizmodo Deals",
+      "title": "If You Want an Alexa Speaker, the Newest Echo Spot Now Costs Peanuts on Amazon",
+      "description": "The Echo Spot is our favorite Alexa speaker in terms of value for money.",
+      "url": "https://gizmodo.com/if-you-want-an-alexa-speaker-the-newest-echo-spot-now-costs-peanuts-on-amazon-2000626484",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/alexa-speaker-echo-spot-1200x675.jpg",
+      "publishedAt": "2025-07-09T12:55:04Z",
+      "content": "The Echo Spot is the top-selling Alexa speaker, and it is easy to see why. Compared to the Echo Dot or Pop, which offer the voice assistant of Alexa without a display, the Echo Spot features a bright… [+2019 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Ellyn Lapointe",
+      "title": "Forecasters to Lose Hurricane Satellite Data at the Worst Possible Time",
+      "description": "This latest blow to federal forecasting abilities is sparking outrage from meteorologists and public officials.",
+      "url": "https://gizmodo.com/forecasters-to-lose-hurricane-satellite-data-at-the-worst-possible-time-2000622121",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/Hurricane-Milton-landfall-1200x675.jpg",
+      "publishedAt": "2025-06-30T18:25:10Z",
+      "content": "In one month, the National Oceanic and Atmospheric Administration (NOAA) and its National Hurricane Center (NHC) will lose access to critical satellite data that lets meteorologists see inside the ey… [+5305 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Joe Hernandez",
+      "title": "How good was the forecast? Texas officials and the National Weather Service disagree",
+      "description": "As searchers continue to look for victims in the deadly flash flooding in Texas, officials are answering questions about the weather forecasts ahead of and during the storm.",
+      "url": "https://www.npr.org/2025/07/06/nx-s1-5458512/texas-flash-flood-weather-forecast",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3000x1688+0+199/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F90%2F92%2F209abac34b668ee202c419d649ad%2Fgettyimages-2222953014.jpg",
+      "publishedAt": "2025-07-06T22:06:49Z",
+      "content": "As early as Wednesday, Texas officials were marshalling the state's emergency response resources to prepare for the coming storm\r\n.\r\nBy Thursday afternoon, the National Weather Service's Austin/San A… [+6407 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "Amber Campbell",
+      "title": "I've lived in Seattle for 22 years. If you want to have a good time in my city, there are 6 things you need to know.",
+      "description": "I've lived in Seattle for over two decades, and have learned some important lessons about the city's geography, weather, and tourist attractions.",
+      "url": "https://www.businessinsider.com/tips-things-to-know-before-going-to-seattle-from-local",
+      "urlToImage": "https://i.insider.com/6849ef913d5881a51c1b3e84?width=1200&format=jpeg",
+      "publishedAt": "2025-06-21T11:57:02Z",
+      "content": "As a Seattle local, I know a lot about the city's neighborhoods and weather.Amber Campbell\r\n<ul><li>I've lived in Seattle for more than two decades, and have plenty of advice for tourists.</li><li>Do… [+4475 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNET"
+      },
+      "author": "Thomas Kika",
+      "title": "What Is a Heat Dome? All About the Weather Phenomenon Making Things Hotter",
+      "description": "It's super hot in a lot of places around the US right now, thanks in part to the heat dome that has taken hold in the atmosphere.",
+      "url": "https://www.cnet.com/news/what-is-a-heat-dome-all-about-the-weather-phenomenon-making-things-hotter/",
+      "urlToImage": "https://www.cnet.com/a/img/resize/e1c95c19130c0d90541e30abd3c6b9b182957fd2/hub/2024/06/18/14101604-fb36-462b-8ac4-ee370b546fb0/gettyimages-1265147473.jpg?auto=webp&fit=crop&height=675&width=1200",
+      "publishedAt": "2025-07-05T10:03:03Z",
+      "content": "It's been a hot summer already. As much as the heat in upstate New York has me cooped up inside with the air conditioner blasting, it's nothing compared to other parts of the US being impacted by one… [+3561 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Emma Roth",
+      "title": "Tesla’s first robotaxi rides will have a ‘safety monitor’ in the passenger seat",
+      "description": "Tesla has begun sending out invitations for its highly anticipated robotaxi service, but there’s one significant caveat: it’s installing a “safety monitor” in the front passenger seat, as previously reported by Electrek. The invites, which were sent to Tesla …",
+      "url": "https://www.theverge.com/news/690245/tesla-robotaxi-rides-launch-safety-monitor-passenger-seat",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/STKE001_STK086_Tesla_Robotaxi_A.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-06-20T13:50:53Z",
+      "content": "Elon Musk previously said Teslas robotaxi service would have no one in the car.\r\nTesla has begun sending out invitations for its highly anticipated robotaxi service, but theres one significant caveat… [+1582 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Texas floods death toll climbs to more than 100",
+      "description": "Search and rescue teams wade through mud-piled riverbanks for a fourth day as more flash floods threaten the region.",
+      "url": "https://www.bbc.com/news/articles/c0j4eq517qyo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/f0b9/live/241e0740-5b7e-11f0-a40e-a1af2950b220.jpg",
+      "publishedAt": "2025-07-07T22:37:14Z",
+      "content": "Angélica CasasReporting from\r\nKerrville, Texas\r\nWatch: Volunteers help lead search for their neighbours after Texas flooding\r\nThe death toll from flash floods that struck central Texas on Friday has … [+3662 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "Daily Weather Update from FOX Weather: Stifling heat wave begins to abate; 'ring of fire' to bring more storms",
+      "description": null,
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_bed3a624-f61a-4688-b230-b9bde7802c76",
+      "urlToImage": null,
+      "publishedAt": "2025-06-25T11:17:29Z",
+      "content": "If you click 'Accept all', we and our partners, including 235 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Temperatures set to soar to 30C across the UK",
+      "description": "The nights will also be much warmer from Thursday, with many areas seeing temperatures in the high teens.",
+      "url": "https://www.bbc.com/news/articles/c8d6jmmdq5go",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/0880/live/9ed696d0-4c30-11f0-a380-d5e16029f677.jpg",
+      "publishedAt": "2025-06-18T11:45:23Z",
+      "content": "Temperatures are set to reach 30C (86F) in parts of the UK on Thursday, with the heat expected to build steadily as the week goes on.\r\nIt is likely to mean the first heatwave of 2025 being declared b… [+4123 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Hackaday"
+      },
+      "author": "John Elliot V",
+      "title": "Converting an E-Paper Photo Frame into Weather Map",
+      "description": "Here’s a great hack sent in to us from [Simon]. He uses an e-paper photo frame as a weather map! By now you are probably aware of e-paper technology, which is very low power tech for displayi…",
+      "url": "https://hackaday.com/2025/06/21/converting-an-e-paper-photo-frame-into-weather-map/",
+      "urlToImage": "https://hackaday.com/wp-content/uploads/2025/06/eink-weather-banner.png",
+      "publishedAt": "2025-06-21T20:00:59Z",
+      "content": "Here’s a great hack sent in to us from [Simon]. He uses an e-paper photo frame as a weather map!\r\nBy now you are probably aware of e-paper technology, which is very low power tech for displaying imag… [+1212 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Blog.google"
+      },
+      "author": "Keyword Team",
+      "title": "The latest AI news we announced in June",
+      "description": "an mp4 carousel of images shoe people and dark blue icons including a magnifying glass",
+      "url": "https://blog.google/technology/ai/google-ai-updates-june-2025/",
+      "urlToImage": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/June_AI_Recap_social-share.width-1300.png",
+      "publishedAt": "2025-07-02T16:00:00Z",
+      "content": "We introduced AlphaGenome: AI to better understand the human genome. Our new, unifying DNA sequence model advances regulatory variant-effect prediction and promises to shed new light on genome functi… [+1358 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "The Associated Press",
+      "title": "Early-season heat dome brings highest temperatures in years to parts of Eastern US",
+      "description": "An intense and nearly historic weather pattern is cooking much of America under a dangerous heat dome this week with triple-digit temperatures in places that haven't been so hot in more than a decade.",
+      "url": "https://www.npr.org/2025/06/24/nx-s1-5442736/early-season-heat-dome-highest-temperatures-years-parts-of-eastern-us",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8256x4644+0+860/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F7f%2Fb1%2F807905244616a972243cce066cc3%2Fap25174073184538.jpg",
+      "publishedAt": "2025-06-24T07:31:55Z",
+      "content": "NEW YORK An intense and nearly historic weather pattern is cooking much of America under a dangerous heat dome this week with triple-digit temperatures in places that haven't been so hot in more than… [+4436 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Alana Wise",
+      "title": "Welcome to summer: U.S. braces for first significant heat wave of the new season",
+      "description": "For many Americans, high humidity will make it feel in the triple digits. The National Weather Service is urging people to prepare to protect themselves from the dangers of extreme heat.",
+      "url": "https://www.npr.org/2025/06/20/nx-s1-5440262/heat-wave-summer-first-humidity",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2809x1580+0+146/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F77%2F3a%2F2e7585664d2e9a5638816bfcfcb2%2Fgettyimages-2220349324.jpg",
+      "publishedAt": "2025-06-20T21:10:54Z",
+      "content": "Friday marks the start of summer and the first significant heat wave of the season, according to the National Weather Service, leaving much of the country bracing for temperatures that will feel like… [+3802 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Bill Chappell",
+      "title": "'A lid on a pot': How does a heat dome work?",
+      "description": "\"If you've made grilled cheese in a pan and you put a lid on there, it melts the cheese faster because the lid helps trap the heat,\" a National Weather Service official told NPR.",
+      "url": "https://www.npr.org/2025/06/24/g-s1-74358/heat-dome-hot-weather-explained",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1942x1092+0+76/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F18%2Fb0%2F291a701a4109962da14552c72cb6%2Fheat-dome-us-7-day.jpg",
+      "publishedAt": "2025-06-24T20:54:04Z",
+      "content": "A heat dome is bringing oppressive heat to the eastern half of the contiguous U.S., with forecasters warning people in those areas to take precautions to cope with extreme high temperatures. The phen… [+4316 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "New Zealand braces for severe weather as storm threatens flooding",
+      "description": null,
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_4fdac1c4-8735-42dc-8086-c7ac28b8f1ac",
+      "urlToImage": null,
+      "publishedAt": "2025-07-11T03:38:19Z",
+      "content": "If you click 'Accept all', we and our partners, including 236 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "Wildfire smoke may follow storms, severe weather in eastern US",
+      "description": null,
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_897c8679-7a0a-4e9c-a4e6-7018b9996b5a",
+      "urlToImage": null,
+      "publishedAt": "2025-07-11T16:13:26Z",
+      "content": "If you click 'Accept all', we and our partners, including 236 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Staugustine.com"
+      },
+      "author": "Lucia Viti and Cheryl McCloud, USA TODAY NETWORK - Florida",
+      "title": "St. Augustine's July 4 week will likely be a wet one. Will there be a tropical storm?",
+      "description": "America's oldest city may see rain and unusual weather patterns over the Fourth of July weekend",
+      "url": "https://www.staugustine.com/story/weather/2025/06/30/st-augustines-fourth-of-july-weekend-may-be-a-wet-one/84419046007/",
+      "urlToImage": "https://media.zenfs.com/en/the-st-augustine-record/c141f474d8ed43b4032aa98590be90b4",
+      "publishedAt": "2025-06-30T19:45:27Z",
+      "content": "It could be a very wet week in St. Johns County this week, so make sure you have back-up plans for staying inside.\r\nA disturbance is expected to stall late this week off the southeastern coast of the… [+3975 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "UK could break hottest day record with 33C peak",
+      "description": "Temperatures could peak at 33C on Friday to break Thursday's record for hottest day of the year.",
+      "url": "https://www.bbc.com/news/articles/cg5z78nyglpo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/eafb/live/06bc2650-4d7d-11f0-86d5-3b52b53af158.jpg",
+      "publishedAt": "2025-06-20T02:35:29Z",
+      "content": "The UK is on track to break its record for the hottest day of the year for two days running with temperatures forecast to soar up to 33C on Friday.\r\nHot and dry conditions are expected to continue wi… [+1846 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Trump surveys damage in Texas as search continues for 160 missing",
+      "description": "At least 120 were killed when flash flooding devastated areas in central Texas last week.",
+      "url": "https://www.bbc.com/news/articles/cr5vlp0pmdzo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/9e2b/live/8ad90770-5ea1-11f0-a40e-a1af2950b220.jpg",
+      "publishedAt": "2025-07-11T21:43:44Z",
+      "content": "US President Donald Trump reassured residents of Kerrville, Texas, that the government would help rebuild after floods hit the central part of the state last week, killing 120 people. \r\nThe president… [+1881 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Ellyn Lapointe",
+      "title": "Why This Recent Total Solar Eclipse Was the First of Its Kind",
+      "description": "The European Space Agency’s Proba-3 mission just changed the game for solar scientists.",
+      "url": "https://gizmodo.com/why-this-recent-total-solar-eclipse-was-the-first-of-its-kind-2000616898",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/proba-3-artificial-solar-eclipse-1200x675.jpg",
+      "publishedAt": "2025-06-17T16:25:49Z",
+      "content": "The Suns outer atmospherethe coronaonly reveals itself during total solar eclipses, which happen about every 18 months on Earth, and are only visible along a narrow path. These events offer scientist… [+4577 chars]"
+    },
+    {
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Mitch Moxley",
+      "title": "How to Travel to the Most Remote Office on Earth",
+      "description": "Commuting to Concordia research station in Antarctica takes days—it’s more remote than the International Space Station. Here’s how to get there.",
+      "url": "https://www.wired.com/story/concordia-research-station-commute/",
+      "urlToImage": "https://media.wired.com/photos/685eb7b77d06b9641a4f5eed/191:100/w_1280,c_limit/22523890379_a599897a4b_b.jpg",
+      "publishedAt": "2025-07-02T13:00:00Z",
+      "content": "This station is just a logistical one; its not meant to host people, and everyone who stays there blocks others from coming in. Its a real logistical challenge for the people working there, so they w… [+3790 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Ellyn Lapointe",
+      "title": "Federal Forecasters Lose Access to Critical Tool as Hurricane Season Begins",
+      "description": "The change marks another blow to NOAA’s forecasting abilities, adding to growing concerns about the agency’s readiness for hurricane season.",
+      "url": "https://gizmodo.com/federal-forecasters-lose-access-to-critical-tool-as-hurricane-season-begins-2000616470",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/Saildrone-fourth-generation-1200x675.jpg",
+      "publishedAt": "2025-06-16T19:20:15Z",
+      "content": "As Atlantic hurricane season surges to life, federal forecasters must say goodbye to one of their most valuable toolsSaildrones. These uncrewed ships sail into the hearts of tropical storms to collec… [+3894 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Desert Sun"
+      },
+      "author": "Tom Coulter, Palm Springs Desert Sun",
+      "title": "Palm Springs weather: Desert to get brief break from triple digits. See weekend forecast",
+      "description": "After days of scorching weather, the Coachella Valley will get a brief break, with a few days below 100.",
+      "url": "https://www.desertsun.com/story/weather/2025/06/20/palm-springs-weather-area-to-get-brief-relief-from-triple-digits/84287483007/",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/2_TPR8zzpFbuydjQiaj67g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTk-/https://media.zenfs.com/en/the-desert-sun/c12839e68c6a440fa5e682a87fc23589",
+      "publishedAt": "2025-06-20T17:58:44Z",
+      "content": "After several days of scorching weather, the Coachella Valley is expected to get a reprieve from triple-digit heat over the weekend but enjoy the summer cool-off while it lasts.\r\nTemperatures in the … [+1976 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": "Simon King",
+      "title": "Fresher start to the week but heat retuning for some parts of the UK",
+      "description": "After last week's heatwave temperatures have dropped a bit, but the heat should  start to build again by the end of the week.",
+      "url": "https://www.bbc.com/weather/articles/cj0mr0l5d9eo",
+      "urlToImage": "https://ichef.bbci.co.uk/ace/branded_weather/1200/cpsprodpb/ea60/live/485b53a0-5017-11f0-8c0a-5b816c079050.jpg",
+      "publishedAt": "2025-06-23T10:49:41Z",
+      "content": "Even though the fresher feel on Monday might make you think that we've \"had our summer\", the reality is that temperatures are now actually closer to the seasonal average around 17C to 24C (63-75F).\r\n… [+839 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Gabrielle Emanuel",
+      "title": "Here's a timeline of the catastrophic Texas floods",
+      "description": "NPR has compiled a timeline of when local, state and federal officials posted warnings on social media as well as the timeline of events as presented by local officials.",
+      "url": "https://www.npr.org/2025/07/05/nx-s1-5457759/texas-floods-timeline",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8090x4551+0+373/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F7e%2Fd1%2F3ff49c454549b377591751963158%2Fgettyimages-2222953085.jpg",
+      "publishedAt": "2025-07-05T22:30:39Z",
+      "content": "In the early hours of Friday, floods\r\n swept across Texas Hill Country. The Guadalupe River rose 26 feet within 45 minutes, according to state officials.\r\nThe flooding killed at least 14 children and… [+8691 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Carrie Johnson warns mums over dehydration from hospital bed",
+      "description": "The wife of former PM Boris Johnson thanked the NHS after what she said was a \"brutal\" week for her and her new baby.",
+      "url": "https://www.bbc.com/news/articles/c4gd31g56d3o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/4a47/live/5cb27da0-5400-11f0-b4be-8f7caf53b80c.jpg",
+      "publishedAt": "2025-06-28T09:56:04Z",
+      "content": "Carrie Johnson, wife of former prime minister Boris Johnson, gave birth to her fourth child in May\r\nCarrie Johnson has warned mums who breastfeed to make sure they eat and drink enough in the summer … [+2752 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "Sarah E. Needleman",
+      "title": "Companies have plans for extreme weather and workplace violence. Now, some are planning for ICE raids, too.",
+      "description": "As ICE agents raid workplaces across the country, some companies are calling on HR and legal experts to develop a plan.",
+      "url": "https://www.businessinsider.com/companies-plan-for-ice-raids-workplace-2025-7",
+      "urlToImage": "https://i.insider.com/686d859485e81483682d9a0a?width=1200&format=jpeg",
+      "publishedAt": "2025-07-10T09:46:01Z",
+      "content": "Workers at Delta Downs Racetrack, Hotel and Casino in Calcasieu Parish, Louisiana.U.S. Immigration and Customs Enforcement via AP\r\n<ul><li>Immigration and Customs Enforcement officers have visited wo… [+5892 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Spun"
+      },
+      "author": "Andrew Holleran",
+      "title": "'Extremely Dangerous' Storm Could Hit 4 U.S. States Tonight",
+      "description": "An \"extremely dangerous\" storm featuring \"downburst/microburst\" events could hit up to four U.S. states on Wednesday evening. The National Weather Service is...",
+      "url": "https://thespun.com/trending/extremely-dangerous-storm-could-hit-4-u-s-states-tonight",
+      "urlToImage": "https://media.zenfs.com/en/the_spun_articles_751/5f52e0c415ecb3171aa3cbe1fa426fdf",
+      "publishedAt": "2025-06-25T21:45:51Z",
+      "content": "'Extremely Dangerous' Storm Could Hit 4 U.S. States Tonight originally appeared on The Spun.\r\nAn \"extremely dangerous\" storm featuring \"downburst/microburst\" events could hit up to four U.S. states o… [+2628 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Weather Channel"
+      },
+      "author": "The Weather Channel",
+      "title": "Stormchasers Capture Stunning South Dakota Tornadoes",
+      "description": "The National Weather Service received a half dozen tornado reports in Deuel County South Dakota. Stormchasers were on hand and close up to the rural twisters...",
+      "url": "https://weather.com/news/weather/video/deuel-south-dakota-tornado-stormchaser-footage",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/BGrx7p5dPWdSatb28D7TaQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://media.zenfs.com/en/the_weather_channel_videos_110/00b4d53611eb57a2680a9c6605cf9d50",
+      "publishedAt": "2025-06-29T18:36:29Z",
+      "content": "The National Weather Service received a half dozen tornado reports in Deuel County South Dakota. Stormchasers were on hand and close up to the rural twisters, which destroyed at least one home and le… [+39 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "CHRISTOPHER WEBER",
+      "title": "California's largest blaze explodes in size as dry, hot weather raises wildfire risk statewide",
+      "description": "A wildfire in a wilderness area of central California exploded in size as dry, hot weather Thursday raised the fire risk for large portions of the state...",
+      "url": "https://www.yahoo.com/news/californias-largest-blaze-explodes-size-164433926.html",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/uNpJ9Yor0PfqiqtvxKiBZA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02ODI7Y2Y9d2VicA--/https://media.zenfs.com/en/ap.org/058fb0243960af06060910bed7040b47",
+      "publishedAt": "2025-07-03T16:44:33Z",
+      "content": "LOS ANGELES (AP) A wildfire in a wilderness area of central California exploded in size as dry, hot weather Thursday raised the fire risk for large portions of the state ahead of the July Fourth holi… [+1353 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Alyson Hurt",
+      "title": "Graphics: Where the Texas floods happened and how high the waters rose",
+      "description": "One Guadalupe River flood gauge near Kerrville and Camp Mystic recorded a rise of more than 25 feet in two hours.",
+      "url": "https://www.npr.org/2025/07/08/g-s1-76471/guadalupe-river-texas-flood-map",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1564x880+203+172/resize/1400/quality/100/format/png/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe7%2Fd4%2F5dc1b66a4492bbf0a482dbd707d1%2Fr3chw-flooding-along-the-guadalupe-river-in-texas-including-kerr-county-kerrville-and-camp-mystic.png",
+      "publishedAt": "2025-07-08T18:47:34Z",
+      "content": "As any Texan knows, the weather here is unpredictable. Thats because of the states unique position between cold, dry air from the north and moist, warm air from the Gulf of Mexico. Central Texas in p… [+468 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Oklahoman.com"
+      },
+      "author": "Andrew Ford, USA TODAY NETWORK",
+      "title": "Severe thunderstorm warning issued for Oklahoma City area: See live radar, alerts",
+      "description": "A severe thunderstorm warning was issued by the National Weather Service in Norman at 4:20 p.m. on Thursday, June 26.",
+      "url": "https://www.oklahoman.com/story/weather/2025/06/26/okc-weather-severe-thunderstorm-warning-issued-for-oklahoma-city-area/84376955007/",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/enxv8MDRy.zCkcUZFaYNYQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTc7Y2Y9d2VicA--/https://media.zenfs.com/en/the-oklahoman/345b0935bf88125da214ef015af3f18b",
+      "publishedAt": "2025-06-26T21:44:31Z",
+      "content": "A severe thunderstorm warning was issued by the National Weather Service in Norman at 4:20 p.m. on Thursday, June 26. This warning applies to Caddo, Canadian and Grady counties.\r\nMeteorologists warn … [+2209 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Orlando Sentinel"
+      },
+      "author": "Richard Tribou, Orlando Sentinel",
+      "title": "Tropical Storm Chantal picks up speed as it heads for South Carolina coast",
+      "description": "ORLANDO, Fla. — Tropical Storm Chantal formed Saturday as it slowly moved in the Atlantic toward the Carolinas, according to the National Weather Service...",
+      "url": "https://www.orlandosentinel.com/2025/07/05/tropical-storm-chantal-forms-in-the-atlantic-targets-southeast-coast/",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/FkYzAoi85QBn_.Fe_.76Lg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03NDI7Y2Y9d2VicA--/https://media.zenfs.com/en/orlando_sentinel_national_858/073475b1f24b23a2183a440dc9a32416",
+      "publishedAt": "2025-07-05T21:37:00Z",
+      "content": "ORLANDO, Fla. Tropical Storm Chantal formed Saturday as it slowly moved in the Atlantic toward the Carolinas, according to the National Weather Service.\r\nWhat had been Tropical Depression Three that … [+2077 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "KTSM 9 News"
+      },
+      "author": "Tirza Ortiz",
+      "title": "9 Day Forecast: Heavy rain threats throughout week in El Paso area",
+      "description": "EL PASO, Texas (KTSM) — A Weather Authority Alert has been triggered for a number of threats that are present this week including heavy rainfall, localized...",
+      "url": "https://www.ktsm.com/nine-day-forecast/9-day-forecast-heavy-rain-threats-throughout-week-in-el-paso-area/",
+      "urlToImage": "https://media.zenfs.com/en/ktsm_articles_153/05b343b27ccfc7e8f686aa71e9a4e1b7",
+      "publishedAt": "2025-07-12T22:19:25Z",
+      "content": "EL PASO, Texas (KTSM) A Weather Authority Alert has been triggered for a number of threats that are present this week including heavy rainfall, localized flooding, strong gusty winds, and blowing dus… [+1174 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Victoria Song",
+      "title": "The unbearable obviousness of AI fitness summaries",
+      "description": "After nearly a decade of wearables testing, I've amassed a truly terrifying amount of health and fitness data. And while I enjoy poring over my daily data, there's one part I've come to loathe: AI summaries. Over the last two years, a deluge of AI-generated s…",
+      "url": "https://www.theverge.com/fitness-trackers/694140/ai-summaries-fitness-apps-strava-oura-whoop-wearables",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/257829_AI_fitness_summaries_CVirginia2.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-06-27T16:56:26Z",
+      "content": "The unbearable obviousness of AI fitness summaries\r\nI asked AI for insight into my health data. It gave me a regurgitated book report.\r\nThe unbearable obviousness of AI fitness summaries\r\nI asked AI … [+7692 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Will there be a drought where I live?",
+      "description": "We take a look at river, reservoir and groundwater levels after a particularly dry few months.",
+      "url": "https://www.bbc.com/news/articles/crk661074ejo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/ec00/live/e8c273b0-569c-11f0-90cf-2db8f0b9be7b.jpg",
+      "publishedAt": "2025-07-01T23:09:18Z",
+      "content": "Mark Poynting, Jess Carr and Phil LeakeBBC Climate and Verify data journalism teams\r\nMany reservoirs in northern England, like Lindley Wood in Yorkshire, have hit extremely low levels\r\nIf you live in… [+6981 chars]"
+    },
+    {
+      "source": {
+        "id": "time",
+        "name": "Time"
+      },
+      "author": "Simmone Shah",
+      "title": "What To Do In a Power Outage",
+      "description": "If you find yourself facing a power outage during an extreme weather event, there’s many things you can do to get through it comfortably.",
+      "url": "https://time.com/7297328/power-outage-tips-what-to-do/",
+      "urlToImage": "https://api.time.com/wp-content/uploads/2025/06/power-outage.jpg?quality=85&w=1024&h=628&crop=1",
+      "publishedAt": "2025-06-24T18:36:00Z",
+      "content": "As much of the U.S. faces three-digit temperatures this week, power outages have already been reported in several states, including New York, New Jersey, Pennsylvania, and Ohio. \r\nIf you find yoursel… [+4984 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Family wins fight for no-snow Lapland trip refund",
+      "description": "The O'Neil family get full compensation after activities on their Tui holiday were cancelled.",
+      "url": "https://www.bbc.com/news/articles/c994pmv77gro",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/5175/live/710ea0d0-bd42-11ef-a164-7d6c07cbd92c.jpg",
+      "publishedAt": "2025-06-30T05:14:35Z",
+      "content": "Federica BedendoBBC News, North East and Cumbria\r\nThe O'Neil family went on a Santa themed holiday to Lapland, but most of the activities were cancelled\r\nA family have won a six-month fight for a ref… [+2929 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Heatwave spreads to Scotland and Northern Ireland",
+      "description": "Temperatures are expected to be reach more than 30C in large swathes of the country.",
+      "url": "https://www.bbc.com/news/articles/c5y2jd5yye9o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/be94/live/a4f6d320-5ebb-11f0-960d-e9f1088a89fe.jpg",
+      "publishedAt": "2025-07-12T03:35:07Z",
+      "content": "Northern Ireland and Scotland will see temperatures soar as the UK's third heatwave of the year spreads across the country. \r\nScotland is likely to see its warmest day of the year with temperatures o… [+3271 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Tech tycoon Mike Lynch's sunken superyacht raised from seabed near Sicily",
+      "description": "The cause of the sinking, which killed seven of the 22 people on board, is still under investigation.",
+      "url": "https://www.bbc.com/news/articles/czjk7z0r178o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/117a/live/33e885f0-4e8c-11f0-a466-d54f65b60deb.jpg",
+      "publishedAt": "2025-06-21T12:28:08Z",
+      "content": "Sofia Ferreira Santos\r\nA superyacht has been raised from the seabed nearly a year after it sank off the coast of Sicily, killing seven of the 22 people on board.\r\nItalian officials said the luxury ya… [+1721 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "After flash flooding Sunday night, NWS says wet weather in Springfield area will continue",
+      "description": null,
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_4e965bb4-3432-4c48-a42f-304a126de56f",
+      "urlToImage": null,
+      "publishedAt": "2025-07-07T18:20:58Z",
+      "content": "If you click 'Accept all', we and our partners, including 236 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "National Weather Service Puts 2 U.S. States On Tornado Watch Wednesday",
+      "description": null,
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_66a89bb7-71ac-4644-b9c1-857eb85623d5",
+      "urlToImage": null,
+      "publishedAt": "2025-06-18T18:19:46Z",
+      "content": "If you click 'Accept all', we and our partners, including 238 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "Hurricane forecasters warn of stormy weather near Florida as tropical cyclone brews",
+      "description": null,
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_f1ef0a46-7234-43e2-a188-f425e25adfa9",
+      "urlToImage": null,
+      "publishedAt": "2025-07-04T12:59:13Z",
+      "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "FOX 2 Detroit"
+      },
+      "author": "FOX 2 Staff",
+      "title": "Metro Detroit severe weather: Damaging wind, large hail, and flooding all possible Wednesday",
+      "description": "Damaging wind, large hail, and flooding are all possibilities during severe storms this week in Metro Detroit. Tornadoes are also not out of the question.",
+      "url": "https://www.fox2detroit.com/weather/metro-detroit-severe-weather-damaging-wind-large-hail-flooding-all-possible-wednesday",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/G3_wsX52caOwvoB4YPw02w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU-/https://media.zenfs.com/en/wjbk_fox_local_articles_927/a05e1d51db1d639130d584b60ec78a4f",
+      "publishedAt": "2025-06-17T13:28:49Z",
+      "content": "The Brief\r\n<ul><li>Damaging wind, large hail, and flooding are all possibilities Wednesday.\r\n</li><li>Thunderstorms could begin popping up in Southeast Michigan as early as midday, but the greatest c… [+1793 chars]"
+    },
+    {
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Matt Burgess, Lily Hay Newman",
+      "title": "A Group of Young Cybercriminals Poses the ‘Most Imminent Threat’ of Cyberattacks Right Now",
+      "description": "The Scattered Spider hacking group has caused chaos among retailers, insurers, and airlines in recent months. Researchers warn that its flexible structure poses challenges for defense.",
+      "url": "https://www.wired.com/story/scattered-spider-most-imminent-threat/",
+      "urlToImage": "https://media.wired.com/photos/68641612354fa5242df5f4c5/191:100/w_1280,c_limit/ms-empty-spider-sec-1230485391.jpg",
+      "publishedAt": "2025-07-02T17:56:04Z",
+      "content": "Empty grocery store shelves and grounded planes tend to signal a crisis, whether its an extreme weather event, public health crisis, or geopolitical emergency. But these scenes of chaos in recent wee… [+3327 chars]"
+    },
+    {
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Boone Ashworth",
+      "title": "Google Wants to Get Better at Spotting Wildfires From Space",
+      "description": "A partnership with the nonprofit Earth Fire Alliance and satellite manufacturer Muon Space is giving Google a better shot at tracking wildfires—and using AI to process all the data being collected.",
+      "url": "https://www.wired.com/story/google-earth-fire-alliance-spotting-wildfires-from-space/",
+      "urlToImage": "https://media.wired.com/photos/685063d9806539b4180fa570/191:100/w_1280,c_limit/Transporter%2013%20Manifest%20SpaceX.jpg",
+      "publishedAt": "2025-06-24T09:30:00Z",
+      "content": "With fire in particular, times are compressed so much that you have to apply technology to make a decision within the timeframe that you can impact the outcome of what's happening, Collins says.\r\nKry… [+3010 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Andrew J. Hawkins",
+      "title": "Waymo’s robotaxis are coming back to New York City",
+      "description": "Waymo announced today that it intends to launch a fully autonomous robotaxi service in New York City — but first it needs to change state law to permit its vehicles to operate with safety drivers behind the wheel. The Alphabet-owned company said it has applie…",
+      "url": "https://www.theverge.com/news/689093/waymo-nyc-permit-autonomous-testing-new-york-state",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/gettyimages-2214494139.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-06-18T16:00:08Z",
+      "content": "A Waymo vehicle waits on a street on May 14, 2025, in Los Angeles, California. | Photo: Getty Images\r\n\n\nWaymo announced today that it intends to launch a fully autonomous robotaxi service in New York… [+3380 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Andrew Liszewski",
+      "title": "E Ink is turning the laptop touchpad into an e-reader for AI apps",
+      "description": "E Ink has developed a new touchpad for laptops featuring the same electronic paper technology found in e-readers. It’s not the first company to look at the ever-growing size of laptop touchpads and see the potential of additional functionality, but instead of…",
+      "url": "https://www.theverge.com/news/697688/eink-epaper-touchpad-laptop-intel-ai-pcs",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/eink_touchpad.jpg?quality=90&strip=all&crop=0,10.715919097319,100,78.568161805361",
+      "publishedAt": "2025-07-03T17:37:33Z",
+      "content": "The company wants to put its low-power screen technology in your laptop.\r\nThe company wants to put its low-power screen technology in your laptop.\r\nE Ink has developed a new touchpad for laptops feat… [+2734 chars]"
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Thomas Ricker",
+      "title": "The Loop Micro is my new favorite bicycle phone mount",
+      "description": "Bicycle phone mounts have been a regular part of my life in bike-obsessed Amsterdam ever since 2008, when I got my first phone with built-in GPS and turn-by-turn navigation. I've used dozens of mounts since, until they were either lost, broken, or stolen, or …",
+      "url": "https://www.theverge.com/reviews/697356/loop-micro-best-bike-mount-review",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/IMG_0135.jpeg?quality=90&strip=all&crop=0%2C15.095986038394%2C100%2C69.808027923211&w=1200",
+      "publishedAt": "2025-07-04T06:37:48Z",
+      "content": "Bicycle phone mounts have been a regular part of my life in bike-obsessed Amsterdam ever since 2008, when I got my first phone with built-in GPS and turn-by-turn navigation. Ive used dozens of mounts… [+3272 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Ellyn Lapointe",
+      "title": "U.S. Lawmakers Blame Canada for Ruining Summer With Wildfire Smoke",
+      "description": "Six Republican Congress members callously urged Canada to take “proper action” to mitigate smoke wafting into the U.S.",
+      "url": "https://gizmodo.com/u-s-lawmakers-blame-canada-for-ruining-summer-with-wildfire-smoke-2000628204",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/manitoba-wildfire-smoke-1200x675.jpg",
+      "publishedAt": "2025-07-11T18:15:51Z",
+      "content": "The Canadian province of Manitoba is suffering through its worst wildfire season in its history, and to add insult to injury, several U.S. lawmakers are complaining that smoke wafting south is making… [+5575 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Yellow heat health alerts issued for most of England",
+      "description": "The alerts covers most of England and warns of an impact on health and social care due to high temperatures.",
+      "url": "https://www.bbc.com/news/articles/ce3n8kgdj50o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/96ab/live/158d8930-4b66-11f0-9a0b-27ba8ae87ef8.jpg",
+      "publishedAt": "2025-06-17T10:29:54Z",
+      "content": "Yellow heat health alerts have been issued for most of England with temperatures set to soar across the country later this week.\r\nYorkshire and The Humber, East Midlands, West Midlands, East England,… [+1600 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Heatwave peak set to bring 34C to parts of UK",
+      "description": "The rise in temperature coincides with the beginning of Wimbledon and the end of Glastonbury Festival.",
+      "url": "https://www.bbc.com/news/articles/c89epj8pd9zo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/6251/live/1a2f36f0-554d-11f0-a2ff-17a82c2e8bc4.jpg",
+      "publishedAt": "2025-06-30T01:32:27Z",
+      "content": "Parts of the UK could see one of the hottest June days ever as a heatwave, now in its fourth day, peaks on Monday.\r\nTemperatures of 34C are possible in central and eastern parts of England according … [+1590 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Jason Coles",
+      "title": "Anker’s Upgraded Portable Power Station Hits Its Lowest Price of the Year Ahead of Amazon Prime Day",
+      "description": "A good portable power station makes camping, tailgating, and trips to the beach so much better.",
+      "url": "https://gizmodo.com/ankers-upgraded-portable-power-station-hits-its-lowest-price-of-the-year-ahead-of-amazon-prime-day-2000620672",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/anker-deal-3-1200x675.jpg",
+      "publishedAt": "2025-06-27T16:40:31Z",
+      "content": "It’s a lovely time of year to be outdoors. The weather is nice, the vibes are on point, and there’s no denying the appeal of a good long walk, a day at the beach, or just hanging out in the forest. H… [+1953 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "AJ Dellinger",
+      "title": "Cargo Ship Carrying Flaming EVs Sinks Off the Coast of Alaska",
+      "description": "The potential for an oil spill is... high.",
+      "url": "https://gizmodo.com/cargo-ship-carrying-flaming-evs-sinks-off-the-coast-of-alaska-2000620335",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/GettyImages-2211373499-1200x675.jpg",
+      "publishedAt": "2025-06-25T20:15:43Z",
+      "content": "If you were waiting on a new car, the Domino’s Pizza Tracker equivalent for vehicle orders might be stuck at the “Delivery” spot for a while. A cargo ship carrying a fleet of electric vehicles, hybri… [+2091 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Brittany Vincent",
+      "title": "Forget JBL, Soundcore Bluetooth Speaker by Anker Is Near-Free for Early Prime Day, Limited Stock Available",
+      "description": "Get the bass thumping while you're getting ready for the day with this affordable speaker.",
+      "url": "https://gizmodo.com/forget-jbl-soundcore-bluetooth-speaker-by-anker-is-near-free-for-early-prime-day-limited-stock-available-2000617299",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/soundcorego-1200x675.jpg",
+      "publishedAt": "2025-06-18T17:10:51Z",
+      "content": "Some of the best moments in life are made better with music. That includes showering. Who doesn’t sing in the shower? If you said that you don’t, you’re definitely fibbing. We love to sing when we’re… [+2098 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Joe Tilleli",
+      "title": "Garmin vívoactive 5 Smartwatch Is Cheaper Than Last Prime Day and Matches Its Black Friday Price",
+      "description": "Get in shape for summer with a Garmin Vívoactive 5 Smart Fitness watch for $100 off.",
+      "url": "https://gizmodo.com/garmin-vivoactive-5-smartwatch-is-cheaper-than-last-prime-day-and-matches-its-black-friday-price-2000617607",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/Garminvivoactive5-1200x675.jpg",
+      "publishedAt": "2025-06-19T14:10:37Z",
+      "content": "The warmer weather is here, the suns out well into the eveningnow is a great time to start doing your workouts outside. Hit the roads and the trails, get some miles under your belt, and track it all … [+2189 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Gizmodo Deals",
+      "title": "A Free Echo Spot? Amazon Is Almost There This Prime Day",
+      "description": "These Alexa speakers cost next to nothing during Prime Day.",
+      "url": "https://gizmodo.com/a-free-echo-spot-amazon-is-almost-there-this-prime-day-2000625527",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/echospot-1200x675.jpg",
+      "publishedAt": "2025-07-08T10:55:24Z",
+      "content": "Amazon rolled out its Prime Day sales at midnight this Tuesday, and again it dropped prices on some of its best deviceslike the Echo Spot and Echo Pop. If you want a smart alarm clock or a compact Al… [+1759 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Jason Coles",
+      "title": "Forget Dyson, Shark’s Newly Released FlexBreeze Pro Mist Fan Gets Its First Discount for Early Prime Day",
+      "description": "The heat is coming, and it's going to be around for a while, so you'd best be quick to get this high-tech fan while it's on sale.",
+      "url": "https://gizmodo.com/forget-dyson-sharks-newly-released-flexbreeze-pro-mist-fan-gets-its-first-discount-for-early-prime-day-2000618142",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/shark-deal-1200x675.jpg",
+      "publishedAt": "2025-06-23T16:10:03Z",
+      "content": "Summer is coming, or it’s already here. Look, we’re not seasonal experts, and time is a lie anyway, but the important thing here is that it’s getting incredibly warm for a lot of us. While there are … [+1871 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Jason Coles",
+      "title": "Amazon Echo Pop (Newest Model) Hits Almost Free a Week Before Prime Day, Stock Is Running Low",
+      "description": "Get the Amazon Echo Pop with 45% off right now if you're an Amazon Prime member.",
+      "url": "https://gizmodo.com/amazon-echo-pop-newest-model-hits-almost-free-a-week-before-prime-day-stock-is-running-low-2000622704",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/echo-deal-1200x675.jpg",
+      "publishedAt": "2025-07-02T15:40:48Z",
+      "content": "A smart assistant is a big win for a lot of people. Being able to just shout out commands when they pop into your head, like setting alarms, asking about the weather, or finding out where you can get… [+1964 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "MacRumors"
+      },
+      "author": "Joe Rossignol",
+      "title": "iOS 26 Includes These Five Smaller Features You Might Have Missed",
+      "description": "While the dust is beginning to settle on the first iOS 26 beta, we continue to take a closer look at new features coming with the update.\n\n\n\n\n\nBelow, we recap five smaller changes that you might have missed.\n\n\n\nEmoji Game\n\n\n\nApple News+ subscribers in the U.S…",
+      "url": "https://www.macrumors.com/2025/06/21/five-ios-26-features-you-might-have-missed/",
+      "urlToImage": "https://images.macrumors.com/t/TjqV6ecRl1uJlWcYJ1P5CqsMl9s=/2500x/article-new/2025/06/iOS-26-on-Three-iPhones.jpg",
+      "publishedAt": "2025-06-21T18:18:37Z",
+      "content": "While the dust is beginning to settle on the first iOS 26 beta, we continue to take a closer look at new features coming with the update.\r\nBelow, we recap five smaller changes that you might have mis… [+2113 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Flowingdata.com"
+      },
+      "author": "Nathan Yau",
+      "title": "Weather displayed as vintage 1990s forecast on the Weather Channel",
+      "description": "There was a time when you tuned in to the Weather Channel on something called television and all you saw was a cycle of forecasts. A saxophone tune played in the background and you waited for your …",
+      "url": "https://flowingdata.com/2025/06/25/1990s-forecast-weather-channel/",
+      "urlToImage": "https://flowingdata.com/wp-content/uploads/2025/06/vintage-weather.png",
+      "publishedAt": "2025-06-25T09:38:46Z",
+      "content": "There was a time when you tuned in to the Weather Channel on something called television and all you saw was a cycle of forecasts. A saxophone tune played in the background and you waited for your ci… [+268 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "Alex Sosnowski",
+      "title": "Rounds of severe storms to rattle, drench central US",
+      "description": "Severe thunderstorms will continue to prowl the central United States through the weekend with some areas at risk for damage stemming from high winds, hail, ...",
+      "url": "https://www.yahoo.com/news/rounds-severe-storms-rattle-drench-181523097.html",
+      "urlToImage": "https://media.zenfs.com/en/accuweather_articles_339/5010666a8ef1e94ccf9b82f3215c11e3",
+      "publishedAt": "2025-07-10T18:15:23Z",
+      "content": "Rounds of severe storms to rattle, drench central US\r\nThunderstorms will erupt on the eastern side of a heat dome anchored over the western United States through the weekend. Some communities will be… [+2847 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "NPR Staff",
+      "title": "Photos: Texas reels from deadly flooding",
+      "description": "Governor Greg Abbott says the state will work day and night to find people who may be stranded and unable to call for help.",
+      "url": "https://www.npr.org/sections/the-picture-show/2025/07/05/g-s1-76178/photos-deadly-flooding-texas",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4689x2638+0+245/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa5%2F18%2Ff7d91de34828b595d0254e996419%2Fap25185760703021.jpg",
+      "publishedAt": "2025-07-05T14:57:22Z",
+      "content": "At least 24 people have died in severe floods in parts of central Texas.\r\nFirst responders are searching for more survivors including 20 summer campers in Kerrville, Texas.\r\nThe National Weather Serv… [+188 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "Alex Sosnowski",
+      "title": "‘Ring of fire' thunderstorms to erupt on building heat dome in central, eastern US",
+      "description": "Rounds of thunderstorms will form a \"ring of fire\" around a massive dome of building heat in the central and eastern United States into next week.",
+      "url": "https://www.yahoo.com/news/ring-fire-thunderstorms-erupt-building-171705078.html",
+      "urlToImage": "https://media.zenfs.com/en/accuweather_articles_339/0eb57f293a44da2d6bf5ec13604208f0",
+      "publishedAt": "2025-06-19T17:17:05Z",
+      "content": "As a major heat wave builds and takes center stage in the weather from late this week to next week, groups of severe thunderstorms will erupt on the edge of the dome of hot air, AccuWeather meteorolo… [+3543 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news",
+        "name": "ABC News"
+      },
+      "author": "ABC News",
+      "title": "WATCH: Overnight storms impact early July 4th holiday getaways",
+      "description": "Much of the nation is bracing for more severe weather as the projected record-breaking Fourth of July travel week kicks off.",
+      "url": "https://abcnews.go.com/GMA/Travel/video/overnight-storms-impact-early-july-4th-holiday-getaways-123332672",
+      "urlToImage": "https://i.abcnewsfe.com/a/c072df6d-f709-4173-a6e8-555fef4e4bda/250630_gma_benitez_july4th_0709_hpMain_16x9.jpg?w=992",
+      "publishedAt": "2025-06-30T13:30:58Z",
+      "content": "<ul><li>Sean 'Diddy' Combs trial: Verdict watch begins\r\n</li><li>Israel getting closer to accepting US proposal: Defense analyst\r\n</li><li>US agencies warn Iranian hackers 'may still conduct maliciou… [+4415 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news",
+        "name": "ABC News"
+      },
+      "author": "Jon Haworth",
+      "title": "At least 3 dead in North Dakota as severe weather sweeps across region",
+      "description": "At least three people are dead in North Dakota after severe weather swept across the region on Friday night, authorities said.",
+      "url": "https://abcnews.go.com/US/3-dead-north-dakota-severe-weather-sweeps-region/story?id=123068015",
+      "urlToImage": "https://i.abcnewsfe.com/a/5792e0de-209b-4817-bfed-40d783819f5a/police-tape-as-lv-241013_1728834683230_hpMain_16x9.jpg?w=1600",
+      "publishedAt": "2025-06-21T11:03:15Z",
+      "content": "At least three people are dead in North Dakota after severe weather swept across the region on Friday night, authorities said.\r\nThe Cass County Sheriff's Office was dispatched to rural Enderlin, Nort… [+1037 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news",
+        "name": "ABC News"
+      },
+      "author": "Alexandra Hutzler",
+      "title": "White House pushes back on criticism of weather service around Texas flooding",
+      "description": "The White House is defending the National Weather Service and accusing some Democrats of playing politics in the wake of devastating floods in Texas.",
+      "url": "https://abcnews.go.com/Politics/white-house-pushes-back-nws-criticism-texas-flooding/story?id=123544699",
+      "urlToImage": "https://i.abcnewsfe.com/a/b76ae9d7-0dbe-4eb0-8725-0d1fbb9565e3/karoline-leavitt-2-rt-gmh-250707_1751909623327_hpMain_16x9.jpg?w=1600",
+      "publishedAt": "2025-07-07T19:55:00Z",
+      "content": "The White House and Republican Sen. Ted Cruz defended the National Weather Service and accused some Democrats of playing politics in the wake of devastating floods in Texas.\r\n\"I think this is not a t… [+5412 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "WHIO Staff",
+      "title": "LIVE UPDATES: Severe Thunderstorm Warnings issued for parts of region",
+      "description": "Strong to severe storms with damaging winds and lightning could cause some interruptions to weekend plans.",
+      "url": "https://www.yahoo.com/news/risk-severe-storms-damaging-winds-200828731.html",
+      "urlToImage": "https://media.zenfs.com/en/whio_cox_articles_828/8f3f4f6ace1bbaf182aaf87d2f9d41e4",
+      "publishedAt": "2025-07-12T21:56:49Z",
+      "content": "UPDATE @ 5:55 p.m. \r\nA Severe Thunderstorm Warning has been issued until 6:45 p.m. for Darke, Miami, Montgomery, and Preble counties.\r\nA Severe Thunderstorm Warning has been issued until 6:15 p.m. fo… [+1251 chars]"
+    },
+    {
+      "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+      },
+      "author": "Kurt Knutsson, CyberGuy Report",
+      "title": "Robots are taking over Uber Eats deliveries. Is your city next?",
+      "description": "Autonomous robots from Uber Eats are rolling out across U.S. cities, featuring LIDAR sensors, secure compartments and all-weather operation for food and grocery delivery.",
+      "url": "https://www.foxnews.com/tech/robots-taking-over-uber-eats-deliveries-your-city-next",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2025/07/6-robots-are-taking-over-uber-eats-deliveries.-is-your-city-next.jpg",
+      "publishedAt": "2025-07-03T10:00:53Z",
+      "content": "If you've ordered food on Uber Eats recently, you may have seen a delivery robot instead of a human driver. \r\nUber has partnered with Avride to bring autonomous robots to the streets. \r\nThey already … [+5531 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": null,
+      "title": "US Defense Department will stop providing satellite weather data",
+      "description": "Comments",
+      "url": "https://text.npr.org/nx-s1-5446120",
+      "urlToImage": null,
+      "publishedAt": "2025-06-28T23:53:40Z",
+      "content": "The U.S. Department of Defense will no longer provide satellite weather data, leaving hurricane forecasters without crucial information about storms as peak hurricane season looms in the Atlantic.\r\nF… [+10197 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Jeffgeerling.com"
+      },
+      "author": null,
+      "title": "Getting weather data from my Acurite sensors was shockingly easy",
+      "description": "Comments",
+      "url": "https://www.jeffgeerling.com/blog/2025/getting-weather-data-my-acurite-sensors-was-shockingly-easy",
+      "urlToImage": null,
+      "publishedAt": "2025-06-28T18:06:01Z",
+      "content": "I've had a Pi and SDR earmarked for 'getting weather data from my weather station' for a long time now. I don't know why I waited so long, because it was shockingly easy.\r\nI have a Acurite 5-in-1 wea… [+4504 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Amber heat health alerts issued as temperatures above 30C likely",
+      "description": "Alerts have been issued across England and will come into place at midday on Thursday.",
+      "url": "https://www.bbc.com/news/articles/cm2z4rmyl0yo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/bff7/live/42fbfa70-4cef-11f0-81a8-0dd4b9474c5a.jpg",
+      "publishedAt": "2025-06-19T09:54:22Z",
+      "content": "Amber heat health alerts have been issued across the whole of England with temperatures likely to exceed 30C for the first time this year.\r\nThe alerts, which will be in effect from midday on Thursday… [+1830 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Three years left to limit warming to 1.5C, leading scientists warn",
+      "description": "The Earth could be doomed to breach a key climate target in as little as three years, scientists warn.",
+      "url": "https://www.bbc.com/news/articles/cn4l927dj5zo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/b13a/live/54e69b00-4c27-11f0-ac5b-1dcff18d9d54.jpg",
+      "publishedAt": "2025-06-19T00:04:28Z",
+      "content": "Mark PoyntingClimate reporter, BBC News\r\nThe Earth could be doomed to breach the symbolic 1.5C warming limit in as little as three years at current levels of carbon dioxide emissions.\r\nThat's the sta… [+5470 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Jordan-Marie Smith",
+      "title": "Deadly flash floods kill 13 in San Antonio and at least 3 in West Virginia",
+      "description": "Fast-paced floodwaters in San Antonio left 13 people dead. West Virginia also witnessed at least three deaths from flash flooding, with more people missing.",
+      "url": "https://www.npr.org/2025/06/15/nx-s1-5434259/flash-floods-deaths-san-antonio-west-virginia",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4032x2268+0+468/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F2e%2F76%2F1e72713048d498af9bf998f23471%2Fap25163662849050.jpg",
+      "publishedAt": "2025-06-15T22:09:13Z",
+      "content": "Flash floods hit the San Antonio area late last week, leaving 13 dead, the San Antonio Fire Department confirmed over the weekend. \r\nThe flooding arrived in the San Antonio area on Thursday, when a r… [+1800 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "Rebecca Hersher",
+      "title": "The Trump administration says it wants to eliminate FEMA. Here's what we know",
+      "description": "Every year, millions of Americans rely on FEMA assistance after hurricanes, wildfires, tornadoes and other disasters. The president says state governments should do more.",
+      "url": "https://www.npr.org/2025/06/26/nx-s1-5430469/faq-fema-elimination",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4392x2471+0+229/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ffd%2F05%2Ff916822e41eb889ad72f722fcf64%2Fap25017607287920.jpg",
+      "publishedAt": "2025-06-26T09:38:00Z",
+      "content": "President Trump says the Federal Emergency Management Agency, FEMA, should be eliminated, and that states should take on more responsibility for responding to and preparing for extreme weather and ot… [+5626 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Delmarva Daily Times"
+      },
+      "author": "Keith Demko, Salisbury Daily Times",
+      "title": "OC Air Show offers 'courtesy accommodations' for ticket holders as Saturday show cut short",
+      "description": "\"Recognizing ... unique circumstances, we are offering special courtesy accommodations for impacted Saturday ticket holders to attend Sunday’s show.\"",
+      "url": "https://www.delmarvanow.com/story/news/local/maryland/2025/06/14/courtesy-accommodations-for-ticket-holders-as-oc-air-show-cut-short/84211385007/",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/SZLPNN_XaBuOPIlhMhUIdQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/delmarva-now-the-daily-times/86556772622b3d92cc70878c629b8e81",
+      "publishedAt": "2025-06-14T23:09:11Z",
+      "content": "After the OC Air Show slate on June 14 was cut short by perilous weather conditions for flying in Ocean City, organizers issued a statement about the situation and what comes next in the early evenin… [+1789 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Weather Channel"
+      },
+      "author": "Jonathan Belles",
+      "title": "Tropical Storms Barry And Flossie Forecast To Form In Southern Gulf, Eastern Pacific. Warning Issued In Mexico.",
+      "description": "One will form on the Gulf side, the other on the Eastern Pacific side. Heavy rain is the main threat in Mexico. Here's the latest.",
+      "url": "https://weather.com/storms/hurricane/news/2025-06-27-tropical-update-mexico-flossie-campeche-pacific",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/tx4Ml0Mi4oJs_uBlKdgHXg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://media.zenfs.com/en/the_weather_channel_articles_180/d52bdcdd2e8d0b42e5c52c627a2db3d7",
+      "publishedAt": "2025-06-28T21:15:40Z",
+      "content": "The tropics have quickly come to life on either side of Mexico, and that is forecast to generate two named storms, Barry and Flossie, in the next day or so.\r\n- The big picture: A large pocket of mois… [+2514 chars]"
+    }
+  ]
+}
