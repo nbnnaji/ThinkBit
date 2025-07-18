@@ -16,33 +16,39 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SearchBar
+import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -54,8 +60,9 @@ import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.model.Source
 import com.nkechinnaji.thinkbit.news.model.uimodel.ArticleUiModel
 import com.nkechinnaji.thinkbit.news.model.uimodel.toUiModel
+import com.nkechinnaji.thinkbit.news.viewmodel.NewsViewModel
+import com.nkechinnaji.thinkbit.ui.theme.Pink10
 import com.nkechinnaji.thinkbit.ui.theme.ThinkBitTheme
-import com.nkechinnaji.thinkbit.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -66,29 +73,36 @@ class MainActivity : ComponentActivity() {
 
     private val viewModel: NewsViewModel by viewModels()
 
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-
-        viewModel.everyNewsObserver.observe(this) { news ->
-            setContent {
-                ThinkBitTheme {
-                    getNewsList(news)
-
+        setContent {
+            ThinkBitTheme {
+                Surface(
+                    color = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .windowInsetsPadding(TopAppBarDefaults.windowInsets)) {
+                    //Livedata observing the state
+                    val articleItemsState = viewModel.everyNewsLd.observeAsState()
+                    val articleItems = articleItemsState.value ?: listOf()
+                    getNewsList(articleItems)
                 }
+
             }
         }
         viewModel.getEveryNews()
     }
 
 
-//With Search & Load More
+    //With Search & Load More
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun getNewsList(articleItems: ArrayList<Articles>) {
+    fun getNewsList(articleItems: List<Articles>) {
         var searchQuery by remember { mutableStateOf("") }
-        var active by remember { mutableStateOf(false) }
+        var isSearchExpanded by remember { mutableStateOf(false) }
+        var isExpandedSearch by remember { mutableStateOf(false) }
 
         // State for "Show More" functionality for the main list
         var visibleMainItemCount by remember { mutableIntStateOf(5) }
@@ -98,52 +112,51 @@ class MainActivity : ComponentActivity() {
             articleItems.toUiModel()
         }
 
-        // This list is used for the search suggestions when the search bar is active
-        val filteredArticlesForSearchSuggestions = remember(searchQuery, active, allArticleUiModels) {
-            if (searchQuery.isBlank()) {
-                if (active) { // Show nothing or recent searches if search is active and query blank
-                    emptyList()
-                } else { // Should not happen if active is false and query blank (covered by main list)
-                    allArticleUiModels
-                }
-            } else {
-                allArticleUiModels.filter { article ->
-                    val query = searchQuery.trim()
-                    (article.title?.contains(query, ignoreCase = true) == true) ||
-                            (article.desc?.contains(query, ignoreCase = true) == true) ||
-                            (article.author?.contains(query, ignoreCase = true) == true)
+        // Re-evaluation of the filtered article list anytime any of the
+        // searchQuery, active, allArticleUiModels changes.
+        val filteredArticlesForSearchSuggestions =
+            remember(searchQuery, isSearchExpanded, allArticleUiModels) {
+                if (searchQuery.isBlank()) {
+                    if (isSearchExpanded) { // Show nothing or recent searches if search is active and query blank
+                        emptyList()
+                    } else { // Should not happen if active is false and query blank (covered by main list)
+                        allArticleUiModels
+                    }
+                } else {
+                    allArticleUiModels.filter { article ->
+                        val query = searchQuery.trim()
+                        (article.title.contains(query, ignoreCase = true) == true) ||
+                                (article.desc.contains(query, ignoreCase = true) == true) ||
+                                (article.author.contains(query, ignoreCase = true) == true)
+                    }
                 }
             }
-        }
 
         // This is the list for the main screen content (outside search bar's active state)
         // It will now also respect the visibleMainItemCount
-        val mainScreenDisplayList = remember(searchQuery, active, allArticleUiModels, visibleMainItemCount) {
-            val baseList = if (!active) { // Only apply "show more" when search is NOT active
-                if (searchQuery.isBlank()) {
-                    allArticleUiModels
-                } else {
-                    // If search is not active but query is present (e.g. after a search),
-                    // show filtered results without "show more" for simplicity,
-                    // or decide if "show more" should apply here too.
-                    // For now, showing all filtered results.
-                    allArticleUiModels.filter { article -> // Re-filter based on searchQuery
-                        val query = searchQuery.trim()
-                        (article.title?.contains(query, ignoreCase = true) == true) ||
-                                (article.desc?.contains(query, ignoreCase = true) == true) ||
-                                (article.author?.contains(query, ignoreCase = true) == true)
+        val displayMainArticleList =
+            remember(searchQuery, isSearchExpanded, allArticleUiModels, visibleMainItemCount) {
+                val baseList = if (!isSearchExpanded) { // Only apply "show more" when search is NOT active
+                    if (searchQuery.isBlank()) {
+                        allArticleUiModels
+                    } else {
+                        // If search is not active but query is present (e.g. after a search),
+                        // show filtered results without "show more". Hence this is showing all filtered results.
+                        allArticleUiModels.filter { article -> // Re-filter based on searchQuery
+                            val query = searchQuery.trim()
+                            (article.title.contains(query, ignoreCase = true) == true)
+                        }
                     }
+                } else { // Search is active, main list area is typically empty or shows different content
+                    emptyList()
                 }
-            } else { // Search is active, main list area is typically empty or shows different content
-                emptyList()
-            }
 
-            if (!active && searchQuery.isBlank()) { // Apply "take" only for the initial, unfiltered list
-                baseList.take(visibleMainItemCount)
-            } else {
-                baseList // For search results or when search is active, show all derived items
+                if (!isSearchExpanded && searchQuery.isBlank()) { // Apply "take" only for the initial, unfiltered list
+                    baseList.take(visibleMainItemCount)
+                } else {
+                    baseList // For search results or when search is active, show all derived items
+                }
             }
-        }
 
 
         Scaffold(
@@ -154,57 +167,82 @@ class MainActivity : ComponentActivity() {
                         text = "News Headlines",
                         style = MaterialTheme.typography.headlineSmall,
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 16.dp, top = 55.dp, end = 16.dp),
-                        textAlign = TextAlign.Center
+                            .fillMaxWidth(),
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
 
+                    val onActiveChange: (Boolean) -> Unit = { isActive ->
+                        isSearchExpanded = isActive
+                        if (!isActive && searchQuery.isBlank()) {
+                            // If search becomes inactive and query is blank, ensure main list pagination is fresh
+                            // visibleMainItemCount = 5 // Or maintain current state if preferred
+                            Log.d("SearchState", "Search dismissed. Showing main list.")
+                        }
+                    }
+                    val colors1 = SearchBarDefaults.colors()// Dismiss search bar on item click
+                     //Content for when SearchBar is active (showing suggestions)
                     SearchBar(
-                        query = searchQuery,
-                        onQueryChange = {
-                            searchQuery = it
-                            // Potentially reset visibleMainItemCount if search interaction should affect main list pagination
-                            // if (active && it.isBlank()) {
-                            // visibleMainItemCount = 5
-                            // }
+                        colors = SearchBarDefaults.colors(
+                            containerColor = Pink10,
+                        ),
+                        inputField = {
+                            SearchBarDefaults.InputField(
+                                expanded = isExpandedSearch,
+                                query = searchQuery,
+                                onQueryChange = {
+                                    searchQuery = it
+                                },
+                                onSearch = {
+                                    isSearchExpanded = false
+                                    // When a search is executed, we typically show all results from that search.
+                                    // The "show more" on the main list might not be relevant here.
+                                },
+                                onExpandedChange = onActiveChange,
+                                placeholder = { Text("Search articles...") },
+                                leadingIcon = {
+                                    if (searchQuery.isNotEmpty()) {
+                                        IconButton(
+                                            onClick = {
+                                                isSearchExpanded = false
+                                                searchQuery = ""
+                                            }
+                                        ) {
+                                            Icon(Icons.AutoMirrored.Default.ArrowBack, contentDescription = "Back")
+                                        }
+                                    } else {
+                                        Icon(Icons.Default.Search, contentDescription = null)
+                                    }
+                                },
+                                trailingIcon = {
+                                    if (searchQuery.isNotEmpty()) {
+                                        Icon(
+                                            modifier = Modifier.clickable {
+                                                searchQuery = ""
+                                                // active = false // Optionally deactivate search on clear
+                                                // visibleMainItemCount = 5 // Reset main list if clearing search returns to it
+                                            },
+                                            imageVector = Icons.Filled.Close,
+                                            contentDescription = "Clear search"
+                                        )
+                                    }
+                                },
+                                colors = colors1.inputFieldColors,
+                            )
                         },
-                        onSearch = {
-                            active = false
-                            // When a search is executed, we typically show all results from that search.
-                            // The "show more" on the main list might not be relevant here.
-                        },
-                        active = active,
-                        onActiveChange = { isActive ->
-                            active = isActive
-                            if (!isActive && searchQuery.isBlank()) {
-                                // If search becomes inactive and query is blank, ensure main list pagination is fresh
-                                // visibleMainItemCount = 5 // Or maintain current state if preferred
-                                Log.d("SearchState", "Search dismissed. Showing main list.")
-                            }
-                        },
-                        placeholder = { Text("Search articles...") },
-                        leadingIcon = { Icon(Icons.Filled.Search, "Search Icon") },
-                        trailingIcon = {
-                            if (searchQuery.isNotEmpty()) {
-                                Icon(
-                                    modifier = Modifier.clickable {
-                                        searchQuery = ""
-                                        // active = false // Optionally deactivate search on clear
-                                        // visibleMainItemCount = 5 // Reset main list if clearing search returns to it
-                                    },
-                                    imageVector = Icons.Filled.Close,
-                                    contentDescription = "Clear search"
-                                )
-                            }
-                        },
+                        expanded = isSearchExpanded,
+                        onExpandedChange = onActiveChange,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp)
-                            .padding(bottom = 32.dp)
+                            .padding(bottom = 16.dp)
                     ) {
                         // Content for when SearchBar is active (showing suggestions)
-                        if (searchQuery.isBlank() && filteredArticlesForSearchSuggestions.isEmpty() && active) {
-                            Text("Type to search for news articles", modifier = Modifier.padding(16.dp))
+                        if (searchQuery.isBlank() && filteredArticlesForSearchSuggestions.isEmpty() && isSearchExpanded) {
+                            Text(
+                                "Type to search for news articles",
+                                modifier = Modifier.padding(16.dp)
+                            )
                         } else {
                             LazyColumn(
                                 modifier = Modifier.fillMaxSize(),
@@ -220,7 +258,7 @@ class MainActivity : ComponentActivity() {
                                 } else {
                                     items(
                                         items = filteredArticlesForSearchSuggestions, // Show all suggestions
-                                        key = { article -> article.url }
+                                        key = { article -> "${article.id}-${article.title}" }
                                     ) { model ->
                                         NewsCardView(
                                             modifier = Modifier
@@ -228,8 +266,9 @@ class MainActivity : ComponentActivity() {
                                                 .padding(vertical = 4.dp),
                                             article = model
                                         ) {
-                                            active = false // Dismiss search bar on item click
-                                            searchQuery = model.title ?: "" // Populate search with title
+                                            isSearchExpanded = false // Dismiss search bar on item click
+                                            searchQuery =
+                                                model.title ?: "" // Populate search with title
                                         }
                                     }
                                 }
@@ -237,17 +276,44 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
+            }, content = CardListComposable(
+                displayMainArticleList,
+                isSearchExpanded,
+                searchQuery,
+                visibleMainItemCount,
+                allArticleUiModels
+            ){
+                visibleMainItemCount += 5
+                if (visibleMainItemCount > allArticleUiModels.size) {
+                    visibleMainItemCount = allArticleUiModels.size
+                }
             }
-        ) { innerPadding ->
+        )
+    }
+
+    @Composable
+    private fun CardListComposable(
+        mainScreenDisplayList: List<ArticleUiModel>,
+        active: Boolean,
+        searchQuery: String,
+        visibleMainItemCount: Int,
+        allArticleUiModels: List<ArticleUiModel>,
+        onShowMoreClick : () -> Unit
+    ): @Composable (PaddingValues) -> Unit {
+        return { innerPadding ->
             // Main content area (visible when search is not active, or after search)
-            Column(modifier = Modifier.padding(innerPadding).fillMaxSize()) {
+            Column(
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .fillMaxSize()
+            ) {
                 LazyColumn(
                     modifier = Modifier.weight(1f), // Allow LazyColumn to take available space
                     contentPadding = PaddingValues(16.dp)
                 ) {
                     items(
                         items = mainScreenDisplayList, // Use the paginated list
-                        key = { article -> article.url }
+                        key = { article -> "${article.id}-${article.title}" }
                     ) { articleUiModelData ->
                         NewsCardView(
                             modifier = Modifier.fillParentMaxWidth(),
@@ -262,15 +328,11 @@ class MainActivity : ComponentActivity() {
                 // "Show More" button for the main list, only if search is not active and query is blank
                 if (!active && searchQuery.isBlank() && visibleMainItemCount < allArticleUiModels.size) {
                     Button(
-                        onClick = {
-                            visibleMainItemCount += 5
-                            if (visibleMainItemCount > allArticleUiModels.size) {
-                                visibleMainItemCount = allArticleUiModels.size
-                            }
-                        },
+                        onClick = onShowMoreClick,
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFB23A48)), // Teal color,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(16.dp)
+                            .padding(16.dp, 0.dp, 16.dp, 16.dp)
                     ) {
                         Text("Show More (${allArticleUiModels.size - visibleMainItemCount} remaining)")
                     }
@@ -292,7 +354,10 @@ class MainActivity : ComponentActivity() {
         Card(
             modifier = modifier
                 .clickable(onClick = onCLick)
-                .padding(bottom = 16.dp)
+                .padding(bottom = 16.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Pink10
+       )
         ) {
             Row(
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
@@ -306,9 +371,9 @@ class MainActivity : ComponentActivity() {
                     // use surface to give a background color
                     // as loading placeholder
                     Surface(
-                        color = MaterialTheme.colorScheme.secondary,
+                        color = Color(0xFFB23A48),
                         // set the shape automatically clip the image inside it
-                        shape =  CircleShape
+                        shape = StarShape(numPoints = 5, innerRadiusRatio = 0.5f)
                     ) {
 
                         var newsImage = rememberAsyncImagePainter(article.imageUrl)
@@ -324,9 +389,12 @@ class MainActivity : ComponentActivity() {
                     }
                     // the publisher name
                     Text(
-                        text = if (article.author.isBlank()) "" else {"  Author: ${article.author}"},
+                        text = if (article.author.isBlank()) "" else {
+                            "  Author: ${article.author}"
+                        },
                         style = MaterialTheme.typography.labelSmall,
-                        maxLines = 1
+                        maxLines = 1,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
                 // the news date
@@ -360,14 +428,14 @@ class MainActivity : ComponentActivity() {
             }
             // news title
             Text(
-                text = article.title ?: "",
+                text = article.title,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp)
             )
             // news short description
             Text(
-                text = article.desc ?: "",
+                text = article.desc,
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp)
             )
@@ -383,41 +451,41 @@ class MainActivity : ComponentActivity() {
     fun ArticleListPreview() {
         val sampleArticles = arrayListOf(
             Articles(
-                source = Source(id = "", name = "The Verge"),
+                source = Source(id = "1", name = "The Verge"),
                 author = "Justine Calma",
                 title = "Breaking News: Compose is Awesome!",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+                publishedAt = "2025-07-13T14:00:20Z"
             ),
             Articles(
-                source = Source(id = "", name = "Wired"),
+                source = Source(id = "2", name = "Wired"),
                 author = "Hilary Beaumont",
                 title = "The Viral Storm Streamers Predicting Deadly Tornadoes—Sometimes Faster Than the Government",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+               publishedAt = "2025-07-13T14:00:20Z"
             ),
 
             Articles(
-                source = Source(id = "", name = "Wired"),
+                source = Source(id = "3", name = "Wired"),
                 author = "Hilary Beaumont",
                 title = "The Viral Storm Streamers Predicting Deadly Tornadoes—Sometimes Faster Than the Government",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+               publishedAt = "2025-07-13T14:00:20Z"
             ),
             Articles(
-                source = Source(id = "", name = "Wired"),
+                source = Source(id = "4", name = "Wired"),
                 author = "Hilary Beaumont",
                 title = "The Viral Storm Streamers Predicting Deadly Tornadoes—Sometimes Faster Than the Government",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+               publishedAt = "2025-07-13T14:00:20Z"
             )
         )
         ThinkBitTheme {
@@ -437,7 +505,6 @@ class MainActivity : ComponentActivity() {
             "yyyy-MM-dd'T'HH:mm:ssXXX",    // Example: "2023-10-26T10:15:30+01:00" (ISO 8601 with offset)
             "MMMM d, yyyy",                // Example: "July 10, 2025"
             "yyyy-MM-dd"                   // Example: "2023-10-26"
-            // Add more patterns here if your date strings can have other formats
         )
 
         var parsedDate: Date? = null
@@ -447,9 +514,7 @@ class MainActivity : ComponentActivity() {
                 val inputFormat = SimpleDateFormat(
                     pattern,
                     Locale.ENGLISH
-                ) // Use Locale.ENGLISH if month names are in English
-                // For SimpleDateFormat, being lenient can sometimes help, but also be risky.
-                // inputFormat.isLenient = false // Consider making it non-lenient for stricter parsing
+                )
                 parsedDate = inputFormat.parse(dateString)
                 if (parsedDate != null) {
                     break // Successfully parsed
@@ -460,11 +525,11 @@ class MainActivity : ComponentActivity() {
         }
 
         return if (parsedDate != null) {
-            // Define the formatter for the desired output ("MM/dd/yyyy")
+            // Defining formatter ("MM/dd/yyyy")
             val outputFormat = SimpleDateFormat(
                 "MM/dd/yyyy",
-                Locale.US
-            ) // Using Locale.US for consistency in output
+                Locale.getDefault()
+            )
             outputFormat.format(parsedDate)
         } else {
             Log.e(
