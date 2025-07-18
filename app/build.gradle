@@ -86,24 +86,24 @@ dependencies {
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.androidx.core.i18n
+    testImplementation libs.mockitoCore
+    testImplementation libs.androidx.core.testing
     testImplementation libs.junit
+    testImplementation libs.truth
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.kotlinx.coroutines.test
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
     androidTestImplementation platform(libs.androidx.compose.bom)
     androidTestImplementation libs.androidx.ui.test.junit4
     debugImplementation libs.androidx.ui.tooling
     debugImplementation libs.androidx.ui.test.manifest
+    implementation(libs.androidx.runtime.livedata)
 
-    implementation "com.google.dagger:hilt-android:2.56.2"
-    ksp "com.google.dagger:hilt-compiler:2.56.2"
+    // DI
+    implementation libs.hilt.android
+    ksp libs.hilt.compiler
 
 //    implementation ("io.coil-kt:coil-compose:2.5.0")
     implementation (libs.coil.compose)
-
-
-    // Dagger
-//    implementation libs.dagger
-//    kapt libs.daggerCompiler
-//    implementation(libs.daggerAndroidSupport)
-//    kapt(libs.daggerAndroidProcessor)
 }

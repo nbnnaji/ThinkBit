@@ -30,7 +30,8 @@ fun Articles.toUiModel(): ArticleUiModel{
 }
 
 //Extension function for list of articles
-fun ArrayList<Articles>.toUiModel(): List<ArticleUiModel>{
+// network response list to UI model list
+fun List<Articles>.toUiModel(): List<ArticleUiModel>{
     return this.map{
         article ->
         article.toUiModel()

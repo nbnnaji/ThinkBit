@@ -1,4 +1,4 @@
-package com.nkechinnaji.thinkbit.baseservice
+package com.nkechinnaji.thinkbit.network
 
 import com.nkechinnaji.thinkbit.news.model.ArticlesResponse
 import com.nkechinnaji.thinkbit.BuildConfig

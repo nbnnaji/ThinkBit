@@ -7,10 +7,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,7 +19,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -44,6 +41,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -52,7 +50,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -64,8 +61,6 @@ import com.nkechinnaji.thinkbit.news.model.Source
 import com.nkechinnaji.thinkbit.news.model.uimodel.ArticleUiModel
 import com.nkechinnaji.thinkbit.news.model.uimodel.toUiModel
 import com.nkechinnaji.thinkbit.ui.theme.Pink10
-import com.nkechinnaji.thinkbit.ui.theme.Pink80
-import com.nkechinnaji.thinkbit.ui.theme.Purple80
 import com.nkechinnaji.thinkbit.ui.theme.ThinkBitTheme
 import com.nkechinnaji.thinkbit.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -82,20 +77,18 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-
-        viewModel.everyNewsObserver.observe(this) { news ->
-            setContent {
-                ThinkBitTheme {
-                    Surface(
-                        color = MaterialTheme.colorScheme.surface,
-                        modifier = Modifier
+        setContent {
+            ThinkBitTheme {
+                Surface(
+                    color = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier
                         .fillMaxSize()
                         .windowInsetsPadding(TopAppBarDefaults.windowInsets)) {
-                        getNewsList(news)
-                    }
-
+                    val articleItemsState = viewModel.everyNewsLd.observeAsState()
+                    val articleItems = articleItemsState.value ?: listOf()
+                    getNewsList(articleItems)
                 }
+
             }
         }
         viewModel.getEveryNews()
@@ -105,9 +98,9 @@ class MainActivity : ComponentActivity() {
     //With Search & Load More
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun getNewsList(articleItems: ArrayList<Articles>) {
+    fun getNewsList(articleItems: List<Articles>) {
         var searchQuery by remember { mutableStateOf("") }
-        var active by remember { mutableStateOf(false) }
+        var isSearchExpanded by remember { mutableStateOf(false) }
         var isExpandedSearch by remember { mutableStateOf(false) }
 
         // State for "Show More" functionality for the main list
@@ -119,10 +112,11 @@ class MainActivity : ComponentActivity() {
         }
 
         // This list is used for the search suggestions when the search bar is active
+        // reevaluate filtered article list anytime any of the searchQuery, active, allArticleUiModels changes
         val filteredArticlesForSearchSuggestions =
-            remember(searchQuery, active, allArticleUiModels) {
+            remember(searchQuery, isSearchExpanded, allArticleUiModels) {
                 if (searchQuery.isBlank()) {
-                    if (active) { // Show nothing or recent searches if search is active and query blank
+                    if (isSearchExpanded) { // Show nothing or recent searches if search is active and query blank
                         emptyList()
                     } else { // Should not happen if active is false and query blank (covered by main list)
                         allArticleUiModels
@@ -139,9 +133,9 @@ class MainActivity : ComponentActivity() {
 
         // This is the list for the main screen content (outside search bar's active state)
         // It will now also respect the visibleMainItemCount
-        val mainScreenDisplayList =
-            remember(searchQuery, active, allArticleUiModels, visibleMainItemCount) {
-                val baseList = if (!active) { // Only apply "show more" when search is NOT active
+        val displayMainArticleList =
+            remember(searchQuery, isSearchExpanded, allArticleUiModels, visibleMainItemCount) {
+                val baseList = if (!isSearchExpanded) { // Only apply "show more" when search is NOT active
                     if (searchQuery.isBlank()) {
                         allArticleUiModels
                     } else {
@@ -158,7 +152,7 @@ class MainActivity : ComponentActivity() {
                     emptyList()
                 }
 
-                if (!active && searchQuery.isBlank()) { // Apply "take" only for the initial, unfiltered list
+                if (!isSearchExpanded && searchQuery.isBlank()) { // Apply "take" only for the initial, unfiltered list
                     baseList.take(visibleMainItemCount)
                 } else {
                     baseList // For search results or when search is active, show all derived items
@@ -181,7 +175,7 @@ class MainActivity : ComponentActivity() {
                     )
 
                     val onActiveChange: (Boolean) -> Unit = { isActive ->
-                        active = isActive
+                        isSearchExpanded = isActive
                         if (!isActive && searchQuery.isBlank()) {
                             // If search becomes inactive and query is blank, ensure main list pagination is fresh
                             // visibleMainItemCount = 5 // Or maintain current state if preferred
@@ -208,7 +202,7 @@ class MainActivity : ComponentActivity() {
                                     // }
                                 },
                                 onSearch = {
-                                    active = false
+                                    isSearchExpanded = false
                                     // When a search is executed, we typically show all results from that search.
                                     // The "show more" on the main list might not be relevant here.
                                 },
@@ -218,7 +212,7 @@ class MainActivity : ComponentActivity() {
                                     if (searchQuery.isNotEmpty()) {
                                         IconButton(
                                             onClick = {
-                                                active = false
+                                                isSearchExpanded = false
                                                 searchQuery = ""
                                             }
                                         ) {
@@ -244,7 +238,7 @@ class MainActivity : ComponentActivity() {
                                 colors = colors1.inputFieldColors,
                             )
                         },
-                        expanded = active,
+                        expanded = isSearchExpanded,
                         onExpandedChange = onActiveChange,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -252,7 +246,7 @@ class MainActivity : ComponentActivity() {
                             .padding(bottom = 16.dp)
                     ) {
                         // Content for when SearchBar is active (showing suggestions)
-                        if (searchQuery.isBlank() && filteredArticlesForSearchSuggestions.isEmpty() && active) {
+                        if (searchQuery.isBlank() && filteredArticlesForSearchSuggestions.isEmpty() && isSearchExpanded) {
                             Text(
                                 "Type to search for news articles",
                                 modifier = Modifier.padding(16.dp)
@@ -272,7 +266,7 @@ class MainActivity : ComponentActivity() {
                                 } else {
                                     items(
                                         items = filteredArticlesForSearchSuggestions, // Show all suggestions
-                                        key = { article -> article.url }
+                                        key = { article -> "${article.id}-${article.title}" }
                                     ) { model ->
                                         NewsCardView(
                                             modifier = Modifier
@@ -280,7 +274,7 @@ class MainActivity : ComponentActivity() {
                                                 .padding(vertical = 4.dp),
                                             article = model
                                         ) {
-                                            active = false // Dismiss search bar on item click
+                                            isSearchExpanded = false // Dismiss search bar on item click
                                             searchQuery =
                                                 model.title ?: "" // Populate search with title
                                         }
@@ -291,12 +285,17 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }, content = CardListComposable(
-                mainScreenDisplayList,
-                active,
+                displayMainArticleList,
+                isSearchExpanded,
                 searchQuery,
                 visibleMainItemCount,
                 allArticleUiModels
-            )
+            ){
+                visibleMainItemCount += 5
+                if (visibleMainItemCount > allArticleUiModels.size) {
+                    visibleMainItemCount = allArticleUiModels.size
+                }
+            }
         )
     }
 
@@ -306,9 +305,9 @@ class MainActivity : ComponentActivity() {
         active: Boolean,
         searchQuery: String,
         visibleMainItemCount: Int,
-        allArticleUiModels: List<ArticleUiModel>
+        allArticleUiModels: List<ArticleUiModel>,
+        onShowMoreClick : () -> Unit
     ): @Composable (PaddingValues) -> Unit {
-        var visibleMainItemCount1 = visibleMainItemCount
         return { innerPadding ->
             // Main content area (visible when search is not active, or after search)
             Column(
@@ -322,7 +321,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     items(
                         items = mainScreenDisplayList, // Use the paginated list
-                        key = { article -> article.url }
+                        key = { article -> "${article.id}-${article.title}" }
                     ) { articleUiModelData ->
                         NewsCardView(
                             modifier = Modifier.fillParentMaxWidth(),
@@ -335,22 +334,17 @@ class MainActivity : ComponentActivity() {
                 }
 
                 // "Show More" button for the main list, only if search is not active and query is blank
-                if (!active && searchQuery.isBlank() && visibleMainItemCount1 < allArticleUiModels.size) {
+                if (!active && searchQuery.isBlank() && visibleMainItemCount < allArticleUiModels.size) {
                     Button(
-                        onClick = {
-                            visibleMainItemCount1 += 5
-                            if (visibleMainItemCount1 > allArticleUiModels.size) {
-                                visibleMainItemCount1 = allArticleUiModels.size
-                            }
-                        },
+                        onClick = onShowMoreClick,
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFB23A48)), // Teal color,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(16.dp, 0.dp, 16.dp, 16.dp)
                     ) {
-                        Text("Show More (${allArticleUiModels.size - visibleMainItemCount1} remaining)")
+                        Text("Show More (${allArticleUiModels.size - visibleMainItemCount} remaining)")
                     }
-                } else if (!active && searchQuery.isBlank() && allArticleUiModels.isNotEmpty() && visibleMainItemCount1 >= allArticleUiModels.size) {
+                } else if (!active && searchQuery.isBlank() && allArticleUiModels.isNotEmpty() && visibleMainItemCount >= allArticleUiModels.size) {
                     Text(
                         "All articles loaded.",
                         modifier = Modifier
@@ -465,41 +459,41 @@ class MainActivity : ComponentActivity() {
     fun ArticleListPreview() {
         val sampleArticles = arrayListOf(
             Articles(
-                source = Source(id = "", name = "The Verge"),
+                source = Source(id = "1", name = "The Verge"),
                 author = "Justine Calma",
                 title = "Breaking News: Compose is Awesome!",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+                publishedAt = "2025-07-13T14:00:20Z"
             ),
             Articles(
-                source = Source(id = "", name = "Wired"),
+                source = Source(id = "2", name = "Wired"),
                 author = "Hilary Beaumont",
                 title = "The Viral Storm Streamers Predicting Deadly Tornadoes—Sometimes Faster Than the Government",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+               publishedAt = "2025-07-13T14:00:20Z"
             ),
 
             Articles(
-                source = Source(id = "", name = "Wired"),
+                source = Source(id = "3", name = "Wired"),
                 author = "Hilary Beaumont",
                 title = "The Viral Storm Streamers Predicting Deadly Tornadoes—Sometimes Faster Than the Government",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+               publishedAt = "2025-07-13T14:00:20Z"
             ),
             Articles(
-                source = Source(id = "", name = "Wired"),
+                source = Source(id = "4", name = "Wired"),
                 author = "Hilary Beaumont",
                 title = "The Viral Storm Streamers Predicting Deadly Tornadoes—Sometimes Faster Than the Government",
                 description = "Jetpack Compose simplifies Android UI development.",
                 url = "https://www.theverge.com/news/685820/google-ai-forecast-typhoon-hurricane-tropical-storm",
                 urlToImage = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/Cyclone-header-image.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-                publishedAt = "July 10, 2025"
+               publishedAt = "2025-07-13T14:00:20Z"
             )
         )
         ThinkBitTheme {
