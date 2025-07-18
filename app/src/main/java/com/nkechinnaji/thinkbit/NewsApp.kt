@@ -5,9 +5,3 @@ import dagger.hilt.android.HiltAndroidApp
 // annotating app to use hilt for DI in this app
 @HiltAndroidApp
 class NewsApp : Application()
-// App
-// module,DI
-// repo
-// service
-// VM
-// activity

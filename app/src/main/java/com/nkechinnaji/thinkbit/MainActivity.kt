@@ -60,9 +60,9 @@ import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.model.Source
 import com.nkechinnaji.thinkbit.news.model.uimodel.ArticleUiModel
 import com.nkechinnaji.thinkbit.news.model.uimodel.toUiModel
+import com.nkechinnaji.thinkbit.news.viewmodel.NewsViewModel
 import com.nkechinnaji.thinkbit.ui.theme.Pink10
 import com.nkechinnaji.thinkbit.ui.theme.ThinkBitTheme
-import com.nkechinnaji.thinkbit.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -84,6 +84,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                         .windowInsetsPadding(TopAppBarDefaults.windowInsets)) {
+                    //Livedata observing the state
                     val articleItemsState = viewModel.everyNewsLd.observeAsState()
                     val articleItems = articleItemsState.value ?: listOf()
                     getNewsList(articleItems)
@@ -111,8 +112,8 @@ class MainActivity : ComponentActivity() {
             articleItems.toUiModel()
         }
 
-        // This list is used for the search suggestions when the search bar is active
-        // reevaluate filtered article list anytime any of the searchQuery, active, allArticleUiModels changes
+        // Re-evaluation of the filtered article list anytime any of the
+        // searchQuery, active, allArticleUiModels changes.
         val filteredArticlesForSearchSuggestions =
             remember(searchQuery, isSearchExpanded, allArticleUiModels) {
                 if (searchQuery.isBlank()) {
@@ -140,9 +141,7 @@ class MainActivity : ComponentActivity() {
                         allArticleUiModels
                     } else {
                         // If search is not active but query is present (e.g. after a search),
-                        // show filtered results without "show more" for simplicity,
-                        // or decide if "show more" should apply here too.
-                        // For now, showing all filtered results.
+                        // show filtered results without "show more". Hence this is showing all filtered results.
                         allArticleUiModels.filter { article -> // Re-filter based on searchQuery
                             val query = searchQuery.trim()
                             (article.title.contains(query, ignoreCase = true) == true)
@@ -168,8 +167,7 @@ class MainActivity : ComponentActivity() {
                         text = "News Headlines",
                         style = MaterialTheme.typography.headlineSmall,
                         modifier = Modifier
-                            .fillMaxWidth()
-                            /*.padding(start = 16.dp, top = 55.dp, end = 16.dp)*/,
+                            .fillMaxWidth(),
                         textAlign = TextAlign.Center,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -183,8 +181,6 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     val colors1 = SearchBarDefaults.colors()// Dismiss search bar on item click
-                    // Populate search with title
-// Show all suggestions
                      //Content for when SearchBar is active (showing suggestions)
                     SearchBar(
                         colors = SearchBarDefaults.colors(
@@ -196,10 +192,6 @@ class MainActivity : ComponentActivity() {
                                 query = searchQuery,
                                 onQueryChange = {
                                     searchQuery = it
-                                    // Potentially reset visibleMainItemCount if search interaction should affect main list pagination
-                                    // if (active && it.isBlank()) {
-                                    // visibleMainItemCount = 5
-                                    // }
                                 },
                                 onSearch = {
                                     isSearchExpanded = false
@@ -513,7 +505,6 @@ class MainActivity : ComponentActivity() {
             "yyyy-MM-dd'T'HH:mm:ssXXX",    // Example: "2023-10-26T10:15:30+01:00" (ISO 8601 with offset)
             "MMMM d, yyyy",                // Example: "July 10, 2025"
             "yyyy-MM-dd"                   // Example: "2023-10-26"
-            // Add more patterns here if your date strings can have other formats
         )
 
         var parsedDate: Date? = null
@@ -523,9 +514,7 @@ class MainActivity : ComponentActivity() {
                 val inputFormat = SimpleDateFormat(
                     pattern,
                     Locale.ENGLISH
-                ) // Use Locale.ENGLISH if month names are in English
-                // For SimpleDateFormat, being lenient can sometimes help, but also be risky.
-                // inputFormat.isLenient = false // Consider making it non-lenient for stricter parsing
+                )
                 parsedDate = inputFormat.parse(dateString)
                 if (parsedDate != null) {
                     break // Successfully parsed
@@ -536,11 +525,11 @@ class MainActivity : ComponentActivity() {
         }
 
         return if (parsedDate != null) {
-            // Define the formatter for the desired output ("MM/dd/yyyy")
+            // Defining formatter ("MM/dd/yyyy")
             val outputFormat = SimpleDateFormat(
                 "MM/dd/yyyy",
-                Locale.US
-            ) // Using Locale.US for consistency in output
+                Locale.getDefault()
+            )
             outputFormat.format(parsedDate)
         } else {
             Log.e(

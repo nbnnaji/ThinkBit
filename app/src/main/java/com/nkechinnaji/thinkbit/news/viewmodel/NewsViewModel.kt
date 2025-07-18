@@ -1,4 +1,4 @@
-package com.nkechinnaji.thinkbit.viewmodel
+package com.nkechinnaji.thinkbit.news.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -9,6 +9,8 @@ import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.service.NewsService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -45,8 +47,8 @@ class NewsViewModel @Inject constructor(
                 everyNewsObserver.postValue(ArrayList()) // Ensure data observer also gets an empty list
 
                 val errorMessage = when (e) {
-                    is java.net.UnknownHostException -> "No internet connection."
-                    is java.net.SocketTimeoutException -> "Connection timed out. Please check your network."
+                    is UnknownHostException -> "No internet connection."
+                    is SocketTimeoutException -> "Connection timed out. Please check your network."
                     else -> "An unexpected error occurred: ${e.message}" // Or a generic message
                 }
                 errorObserver.postValue(errorMessage)

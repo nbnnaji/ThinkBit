@@ -1,6 +1,5 @@
 package com.nkechinnaji.thinkbit
 
-import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Rule
@@ -9,9 +8,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.nkechinnaji.thinkbit.news.model.Articles
 import com.nkechinnaji.thinkbit.news.model.Source
-import com.nkechinnaji.thinkbit.news.repository.NewsRepository
 import com.nkechinnaji.thinkbit.news.service.NewsService
-import com.nkechinnaji.thinkbit.viewmodel.NewsViewModel
+import com.nkechinnaji.thinkbit.news.viewmodel.NewsViewModel
 import kotlinx.coroutines.test.StandardTestDispatcher
 import org.junit.After
 import org.junit.Before
@@ -20,13 +18,11 @@ import kotlinx.coroutines.test.*
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import org.mockito.kotlin.any
-import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
 
 @ExperimentalCoroutinesApi
-@RunWith(MockitoJUnitRunner::class) // Essential if using @Mock annotation for Mockito
+@RunWith(MockitoJUnitRunner::class)
 class NewsViewModelTest {
 
     // For LiveData testing
