@@ -29,8 +29,9 @@ fun Articles.toUiModel(): ArticleUiModel{
     )
 }
 
-//Extention function for list of articles
-fun ArrayList<Articles>.toUiModel(): List<ArticleUiModel>{
+//Extension function for list of articles
+// network response list to UI model list
+fun List<Articles>.toUiModel(): List<ArticleUiModel>{
     return this.map{
         article ->
         article.toUiModel()
